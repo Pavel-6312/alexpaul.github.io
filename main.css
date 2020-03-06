@@ -2,12 +2,60 @@
     --ion-safe-area-top: 20px;
     --ion-safe-area-bottom: 22px;
     --ion-text-color: rgba(0,0,0,0.87);
+
+/* Colors */
+    --blue:rgba(58,102,255,1.00);
+    --brand:rgba(0,0,51,1.00);
+    --red:rgba(255,75,60,1.00);
+    --yellow: rgba(100,170,45,1.00);
+    --green:rgba(100,170,45,1.00);
+
+    --b5:rgba(0,0,0,0.05);
+    --b10:rgba(0,0,0,0.10);
+    --b17:rgba(0,0,0,0.17);
+    --b38:rgba(0,0,0,0.38);
+    --b54:rgba(0,0,0,0.54);
+    --b87:rgba(0,0,0,0.87);
+    --w0:rgba(0,0,0,0.00);
+    --w14:rgba(255,255,255,0.14);
+    --w24:rgba(255,255,255,0.24);
+    --w50:rgba(255,255,255,0.50);
+    --w70:rgba(255,255,255,0.70);
+    --wr:gba(255,255,255,1.00);
   }
 
-  a {
-      background: blue;
-      padding:12px 16px;
-      border-radius:3px;
-      color: white;
-      text-decoration: none;
+  *{
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .header{
+    display: flex;
+    background: var(--brand);
+  }
+
+  .w{
+    background: var(--w);
+    box-shadow: 0px 1px 3px var(--b17);
+    z-index: 1;
+  }
+
+  .btn-ico{
+      display: flex;
+      width: 52px;
+      height: 52px;
+      background-color: var(--w0);
+  }
+
+  .btn{
+    display: flex;
+    width: auto;
+    height: 52px;
+    color: white;
+    background-color: var(--w0);
+    margin: auto 12px auto 12px;
+  }
+
+  .center *{
+      margin:auto;
   }

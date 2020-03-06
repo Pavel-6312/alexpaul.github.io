@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>Indigo mobile</title>
+  
+  <link rel="stylesheet" type = "text/css" href="./reset.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
   <link rel="stylesheet" type = "text/css" href="./main.css" />
 
@@ -18,21 +20,29 @@
     window.pickerController = pickerController;
   </script>
 </head>
+<body>
 
-  <body>
-    <ion-app>
-          
-          <ion-header translucent>
-            <ion-toolbar>
-              <ion-title>Picker</ion-title>
-            </ion-toolbar>
-          </ion-header>
-      
-          <ion-content fullscreen class="ion-padding">
+  <ion-app>
+    <ion-page class="ion-page" id="main-content">
 
-              <a href="./login.html">Placeholder</a>
-          </ion-content>
+      <div class="header w">
+        <a href="./leave.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
+        <p style="margin:auto">Leave date</p>
+        <a class="btn-ico"></a>
+      </div>
 
-    </ion-app>
+      <ion-content class="ion-padding">
+
+            <div slot="fixed" style="bottom:8px; width: 100%; padding: 0 8px 0 8px;">
+                <ion-button href="./leave.html" color="primary" expand="full">Done</ion-button>
+            </div>
+
+      </ion-content>
+
+    </ion-page>
+  </ion-app>
+  
+  <ion-menu-controller></ion-menu-controller>
+
   </body>
 </html>

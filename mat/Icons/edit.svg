@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M22.705,9.0425 C23.095,8.6525 23.095,8.0175 22.705,7.6275 L20.37,5.2925 C19.98,4.9025 19.345,4.9025 18.955,5.2925 L17.125,7.1225 L20.875,10.8725 L22.705,9.0425 Z M5,19.2475 L5,22.9975 L8.75,22.9975 L19.815,11.9325 L16.065,8.1825 L5,19.2475 Z" id="path-1"></path>
+    </defs>
+    <g id="edit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="container" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="28" height="28"></rect>
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill-opacity="0.870000005" fill="#000000" xlink:href="#path-1"></use>
+    </g>
+</svg>

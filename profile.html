@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Indigo mobile</title>
+  
+  <link rel="stylesheet" type = "text/css" href="./reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+  <link rel="stylesheet" type = "text/css" href="./main.css" />
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+
+
+  <script type="module">
+    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.pickerController = pickerController;
+  </script>
+</head>
+<body>
+
+<ion-app>
+    <ion-menu content-id="main-content">
+      <ion-header>
+        
+          <img src="./mat/indigo-mobile-br.svg" style="height: 48px; margin:8px;">
+        
+      </ion-header>
+  
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+
+            <ion-item button href="./team.html"><ion-label>Team</ion-label></ion-item>
+            <ion-item button href="./attendance.html"><ion-label>Attendance</ion-label></ion-item>
+            <ion-item button href="./leave.html"><ion-label>Leave</ion-label></ion-item>
+            <ion-item button href="./profile.html"><ion-label>Profile</ion-label></ion-item>
+            <ion-item button href="http://indigohelp.shireburn.com/en/collections/1960200-indigo-mobile"><ion-label>Help</ion-label></ion-item>
+            <ion-item button href="https://portal.prodpad.com/fca19e08-964d-11e9-9ce6-0abbec7104a5"><ion-label>Provide feedback</ion-label></ion-item>
+            <ion-item button href="https://www.shireburn.com/dataprotection/mobile/"><ion-label>Terms and conditions</ion-label></ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+    <ion-page class="ion-page" id="main-content">
+
+      <div class="header">
+        <ion-menu-toggle>
+          <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
+        </ion-menu-toggle>
+
+        <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
+      </div>
+          
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+         
+        <p>Profile</p>
+
+      </ion-content>
+
+
+
+    </ion-page>
+  </ion-app>
+  
+  <ion-menu-controller></ion-menu-controller>
+
+  </body>
+</html>
