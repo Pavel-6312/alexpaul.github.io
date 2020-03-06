@@ -59,3 +59,16 @@
   .center *{
       margin:auto;
   }
+
+  .logo{
+    height: 48px; 
+    margin:24px 24px 100px 24px;
+  }
+
+  ion-item{
+    --min-height:56px;
+  }
+
+  ion-button{
+      min-height:56px; 
+  }

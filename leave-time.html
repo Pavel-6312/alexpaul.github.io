@@ -27,16 +27,41 @@
 
       <div class="header w">
         <a href="./leave.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
-        <p style="margin:auto">Remark</p>
+        <p style="margin:auto">Leave time</p>
         <a class="btn-ico"></a>
       </div>
 
       <ion-content class="ion-padding">
-          <ion-textarea placeholder="Enter remark here..." autofocus></ion-textarea>
+          <ion-list>
+              <ion-radio-group>
+                
+                <ion-item>
+                  <ion-label>Full day</ion-label>
+                  <ion-radio value="Full day"></ion-radio>
+                </ion-item>
+            
+                <ion-item>
+                  <ion-label>Morning</ion-label>
+                  <ion-radio value="Morning"></ion-radio>
+                </ion-item>
 
-          <div slot="fixed" style="bottom:8px; width: 100%; padding: 0 8px 0 8px;">
-              <ion-button href="./leave.html" color="primary" expand="full">Done</ion-button>
-          </div>
+                <ion-item>
+                    <ion-label>Afternoon</ion-label>
+                    <ion-radio value="Afternoon"></ion-radio>
+                </ion-item>
+            
+                <ion-item>
+                  <ion-label>Custom</ion-label>
+                  <ion-radio value="Custom"></ion-radio>
+                </ion-item>
+            
+              </ion-radio-group>
+            </ion-list>
+
+            <div slot="fixed" style="bottom:8px; width: 100%; padding: 0 8px 0 8px;">
+                <ion-button href="./leave.html" color="primary" expand="full">Done</ion-button>
+            </div>
+
       </ion-content>
 
     </ion-page>
