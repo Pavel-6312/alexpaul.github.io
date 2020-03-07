@@ -1,50 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Indigo mobile</title>
-  
-  <link rel="stylesheet" type = "text/css" href="./reset.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
-  <link rel="stylesheet" type = "text/css" href="./main.css" />
+  <title>Indigo mobile</title> 
 
+  <!-- reset -->
+  <link rel="stylesheet" type = "text/css" href="./reset.css"/>
+
+  <!-- ionic -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
 
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script type="module">
-    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
-    window.pickerController = pickerController;
-  </script>
-</head>
-<body>
+  <!-- main -->
+  <link rel="stylesheet" type = "text/css" href="./main.css" /> 
+  </head>
+  <body>
 
-<ion-app>
+  <ion-app>
+    <!-- menu -->
     <ion-menu content-id="main-content">
-      <ion-header>
-        
-          <img src="./mat/indigo-mobile-br.svg" style="height: 48px; margin:8px;">
-        
-      </ion-header>
-  
-      <ion-content>
-        <ion-list>
-          <ion-menu-toggle auto-hide="false">
-
-            <ion-item button href="./team.html"><ion-label>Team</ion-label></ion-item>
-            <ion-item button href="./attendance.html"><ion-label>Attendance</ion-label></ion-item>
-            <ion-item button href="./leave.html"><ion-label>Leave</ion-label></ion-item>
-            <ion-item button href="./profile.html"><ion-label>Profile</ion-label></ion-item>
-            <ion-item button href="http://indigohelp.shireburn.com/en/collections/1960200-indigo-mobile"><ion-label>Help</ion-label></ion-item>
-            <ion-item button href="https://portal.prodpad.com/fca19e08-964d-11e9-9ce6-0abbec7104a5"><ion-label>Provide feedback</ion-label></ion-item>
-            <ion-item button href="https://www.shireburn.com/dataprotection/mobile/"><ion-label>Terms and conditions</ion-label></ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
+        <menu-logo></menu-logo>
+        <ion-content>
+          <ion-list class="fix-bot border-top">
+            <ion-menu-toggle auto-hide="false">
+              <menu-items></menu-items>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
   
     <ion-page class="ion-page" id="main-content">
 
@@ -55,14 +45,30 @@
 
         <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
       </div>
-          
-        </ion-toolbar>
-      </ion-header>
 
-      <ion-content class="ion-padding">
-         
-        <p>Profile</p>
+      <ion-content class="ion-padding" >
+        <div class=" center" style="display: flex; flex-direction: column;">
+          <img src="./mat/profile.svg" style="margin: 8px auto;">
+          <p style="text-align: center;margin:16px auto;">Jane Parker<br><span style="color: var(--b54);">Shireburn Group</span></p>
+        </div>
+        
+        <ion-list class="border-top">  
+          <ion-item>
+            <ion-label>Notifications</ion-label>
+          </ion-item>
 
+          <ion-item>
+              <ion-label>Log in with anothe account</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Log Out</ion-label>
+          </ion-item>
+
+          <ion-item href="https://www.shireburn.com/dataprotection/mobile/">
+            <ion-label><span>↗</span> Terms and conditions</ion-label>
+          </ion-item>
+        </ion-list>
       </ion-content>
 
 
@@ -73,4 +79,6 @@
   <ion-menu-controller></ion-menu-controller>
 
   </body>
+
+  <script type="text/javascript" src='./main.js'></script>
 </html>

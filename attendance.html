@@ -1,47 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Indigo mobile</title>
-  
-  <link rel="stylesheet" type = "text/css" href="./reset.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
-  <link rel="stylesheet" type = "text/css" href="./main.css" />
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Indigo mobile</title> 
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+    <!-- reset -->
+    <link rel="stylesheet" type = "text/css" href="./reset.css"/>
 
+    <!-- ionic -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+    
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script type="module">
-    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
-    window.pickerController = pickerController;
-  </script>
-</head>
-<body>
+    <!-- main -->
+    <link rel="stylesheet" type = "text/css" href="./main.css" /> 
+  </head>
 
-<ion-app>
+  <body>
+
+  <ion-app>
     <ion-menu content-id="main-content">
-      <ion-header>
-        
-          <img src="./mat/indigo-mobile-br.svg" style="height: 48px; margin:8px;">
-        
-      </ion-header>
-  
+      <menu-logo></menu-logo>
       <ion-content>
-        <ion-list>
+        <ion-list class="fix-bot border-top">
           <ion-menu-toggle auto-hide="false">
-
-              <ion-item button href="./team.html"><ion-label>Team</ion-label></ion-item>
-              <ion-item button href="./attendance.html"><ion-label>Attendance</ion-label></ion-item>
-              <ion-item button href="./leave.html"><ion-label>Leave</ion-label></ion-item>
-              <ion-item button href="./profile.html"><ion-label>Profile</ion-label></ion-item>
-              <ion-item button href="http://indigohelp.shireburn.com/en/collections/1960200-indigo-mobile"><ion-label>Help</ion-label></ion-item>
-              <ion-item button href="https://portal.prodpad.com/fca19e08-964d-11e9-9ce6-0abbec7104a5"><ion-label>Provide feedback</ion-label></ion-item>
-              <ion-item button href="https://www.shireburn.com/dataprotection/mobile/"><ion-label>Terms and conditions</ion-label></ion-item>
-
+            <menu-items></menu-items>
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
@@ -55,12 +44,20 @@
         </ion-menu-toggle>
         <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
       </div>
-          
-        </ion-toolbar>
-      </ion-header>
 
-      <ion-content class="ion-padding">
-      <p>Attendance</p>
+      <ion-content>
+        <ion-list>
+          <ion-item style="display: flex;">
+            <div>
+              <p style="color: var(--b54);">Mon 2 Mar</p>
+              <p>	<span style="color: red;">⬤</span> Full day</p>
+            </div>
+            <div style="margin-left: auto;">
+              <p>></p>
+              <p>08:00-17:00</p>
+            </div>
+          </ion-item>
+        </ion-list>
 
       <div slot="fixed" style="bottom:8px; width: 100%; padding: 0 8px 0 8px;">
           <ion-button color="primary" expand="full">Clock in</ion-button>
@@ -76,4 +73,6 @@
   <ion-menu-controller></ion-menu-controller>
 
   </body>
+  
+  <script type="text/javascript" src='./main.js'></script>
 </html>

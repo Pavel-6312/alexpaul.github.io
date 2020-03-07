@@ -1,108 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>Indigo mobile</title> 
-  <link rel="stylesheet" type = "text/css" href="./reset.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
-  <link rel="stylesheet" type = "text/css" href="./main.css" />  
+
+  <!-- reset -->
+  <link rel="stylesheet" type = "text/css" href="./reset.css"/>
+
+  <!-- ionic -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+  
+  <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script type="module">
-    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
-    window.pickerController = pickerController;
-  </script>
-</head>
+  <!-- main -->
+  <link rel="stylesheet" type = "text/css" href="./main.css" /> 
+  </head>
 
-<body>
-  <ion-app>
-    <ion-menu content-id="main-content">
-      <ion-header><img class="logo" src="./mat/indigo-mobile-br.svg"></ion-header>
-  
-      <ion-content>
-        <ion-list>
-          <ion-menu-toggle auto-hide="false">
+  <body >
 
-              <ion-item href="./attendance.html">
-                <ion-label>Attendance</ion-label>
-              </ion-item>
+    <ion-app>
 
-              <ion-item href="./leave.html">
-                <ion-label>Leave</ion-label></ion-item>
-
-              <ion-item href="./profile.html" >
-                <ion-label>Profile</ion-label></ion-item>
-
-              <ion-item href="http://indigohelp.shireburn.com/en/collections/1960200-indigo-mobile">
-                <ion-label>Help</ion-label></ion-item>
-
-              <ion-item href="https://portal.prodpad.com/fca19e08-964d-11e9-9ce6-0abbec7104a5">
-                <ion-label>Provide feedback</ion-label></ion-item>
-
-              <ion-item href="https://www.shireburn.com/dataprotection/mobile/"><ion-label>Terms and conditions</ion-label></ion-item>
-
-          </ion-menu-toggle>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-page class="ion-page" id="main-content">
-
-      <div class="header">
-        <ion-menu-toggle>
-          <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
-        </ion-menu-toggle>
-        <button class="btn center">Requests</button>
-        <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
-      </div>
-          
-        </ion-toolbar>
-      </ion-header>
-
-      <ion-content class="ion-padding">
-
-        <p>Apply for leave</p>
-
-        <ion-list>
-            <ion-item href="./leave-type.html">
-              <ion-label>Leave type</ion-label>
-              <ion-note slot="end" color="primary">Vacation</ion-note>
-            </ion-item>
-    
-            <ion-item>
-              <ion-label>Date from</ion-label>
-              <ion-datetime display-format="DD MMM YYYY" value="2012-12-15T13:47:20.789"></ion-datetime>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>Date to</ion-label>
-              <ion-datetime display-format="DD MMM YYYY" value="2012-12-15T13:47:20.789"></ion-datetime>
-            </ion-item>
-    
-            <ion-item href="./leave-time.html">
-              <ion-label>Leave time</ion-label>
-              <ion-note slot="end" color="primary">Full day</ion-note>
-            </ion-item>
-    
-            <ion-item href="./leave-remark.html">
-              <ion-label>Remark</ion-label>
-              <ion-note slot="end" color="primary">Add</ion-note>
-            </ion-item>
+      <!-- menu -->
+      <ion-menu content-id="main-content">
+        <menu-logo></menu-logo>
+        <ion-content>
+          <ion-list class="fix-bot border-top">
+            <ion-menu-toggle auto-hide="false">
+              <menu-items></menu-items>
+            </ion-menu-toggle>
           </ion-list>
+        </ion-content>
+      </ion-menu>
 
-          <div slot="fixed" style="bottom:8px; width: 100%; padding: 0 8px 0 8px;">
-              <ion-button color="primary">Apply for leave</ion-button>
-          </div>
+      <!-- page -->
+      <ion-page class="ion-page" id="main-content">
 
-      </ion-content>
+      <!-- header -->
+        <div class="header">
+            <ion-menu-toggle>
+              <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
+            </ion-menu-toggle>
+            <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
+        </div> 
 
-    </ion-page>
-  </ion-app>
-  <ion-menu-controller></ion-menu-controller>
-</body>
+        <ion-tabs>
 
-<script type="text/javascript" src='./main.js'></script>
+        <!-- form -->
+          <ion-tab tab="tab-leave">
+            <ion-content>
+              <!-- <div class="center" style="width: 100%; background:var(--b5); height:15vh;display: flex;">
+
+              </div>
+              -->
+    
+              <ion-list>
+                <ion-item href="./leave-type.html">
+                  <ion-label>Leave type</ion-label>
+                  <ion-note slot="end" color="primary">Vacation</ion-note>
+                </ion-item>
+        
+                <ion-item>
+                  <ion-label>Date from</ion-label>
+                  <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+                </ion-item>
+    
+                <ion-item>
+                  <ion-label>Date to</ion-label>
+                  <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+                </ion-item>
+        
+                <ion-item href="./leave-time.html">
+                  <ion-label>Leave time</ion-label>
+                  <ion-note slot="end" color="primary">Full day</ion-note>
+                </ion-item>
+        
+                <ion-item href="./leave-remark.html">
+                  <ion-label>Remark</ion-label>
+                  <ion-note slot="end" color="primary">Add</ion-note>
+                </ion-item>
+              </ion-list>
+    
+              <ion-list class="border-top">
+                <ion-item class="noLines greyBg">
+                  <ion-label style="color: var(--b54);">Collegues on leave</ion-label>
+                </ion-item>
+                
+                <ion-item class="noLines greyBg" button onclick="testClick()">
+                  <ion-avatar slot="start">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                  </ion-avatar>
+                  <ion-label>
+                    <h3>Robert Knight</h3>
+                    <p>Vacation 2-12 Feb 2020</p>
+                  </ion-label>
+                </ion-item>
+    
+                <ion-item class="noLines greyBg" button onclick="testClick()">
+                  <ion-avatar slot="start">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                  </ion-avatar>
+                  <ion-label>
+                    <h3>Robert Knight</h3>
+                    <p>Vacation 2-12 Feb 2020</p>
+                  </ion-label>
+                </ion-item>
+    
+                <ion-item class="noLines greyBg" button onclick="testClick()">
+                  <ion-avatar slot="start">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                  </ion-avatar>
+                  <ion-label>
+                    <h3>Robert Knight</h3>
+                    <p>Vacation 2-12 Feb 2020</p>
+                  </ion-label>
+                </ion-item>
+    
+                <!-- spacer for fixed button -->
+                <ion-item class="noLines greyBg">
+                  <div style="height: 72px;"></div>
+                </ion-item>
+              </ion-list>
+    
+              <div slot="fixed" style="bottom:8px; padding: auto 8px; width: 100%">
+                  <ion-button class="btn bl" color="primary">Submit leave request</ion-button>
+              </div>
+            </ion-content>
+          </ion-tab>
+
+        <!-- requests -->
+          <ion-tab tab="tab-requests">
+            <ion-list>
+              <ion-item>Requst</ion-item>
+              <ion-item>Requst</ion-item>
+              <ion-item>Requst</ion-item>
+              <ion-item>Requst</ion-item>
+              <ion-item>Requst</ion-item>
+              <ion-item>Requst</ion-item>
+            </ion-list>
+          </ion-tab>
+        
+          <ion-tab-bar slot="top" style="margin-top:52px;">
+            <ion-tab-button tab="tab-leave">
+              <ion-label>Apply for leave</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="tab-requests" ">          
+              <ion-label>Requests</ion-label>
+              <ion-badge>6</ion-badge>
+            </ion-tab-button>
+          </ion-tab-bar>
+          
+        </ion-tabs>       
+
+      </ion-page>
+    </ion-app>
+    <ion-menu-controller></ion-menu-controller>
+  </body>
+
+  <script type="text/javascript" src='./main.js'></script>
 </html>
