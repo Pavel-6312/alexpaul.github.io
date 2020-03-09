@@ -6,21 +6,21 @@ class MenuItems extends HTMLElement {
                 <ion-label>Attendance</ion-label>
             </a>
 
-            <ion-item href="./leave.html">
+            <a class="item-comp" href="./leave.html">
                 <ion-label>Leave</ion-label>
-            </ion-item>
+            </a>
 
-            <ion-item href="./profile.html">
+            <a class="item-comp" href="./profile.html">
                 <ion-label>Profile</ion-label>
-            </ion-item>
+            </a>
 
-            <ion-item href="http://indigohelp.shireburn.com/en/collections/1960200-indigo-mobile">
+            <a class="item-comp" href="http://indigohelp.shireburn.com/en/collections/1960200-indigo-mobile">
                 <ion-label>Help <span>↗</span> </ion-label>
-            </ion-item>
+            </a>
 
-            <ion-item href="https://portal.prodpad.com/fca19e08-964d-11e9-9ce6-0abbec7104a5">
+            <a class="item-comp" href="https://portal.prodpad.com/fca19e08-964d-11e9-9ce6-0abbec7104a5">
                 <ion-label>Provide feedback <span>↗</span></ion-label>
-            </ion-item>            
+            </a>            
         `;
     }
 }
