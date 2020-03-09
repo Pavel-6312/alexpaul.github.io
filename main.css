@@ -26,7 +26,7 @@
 
   *{
     font-size: 16px;
-    line-height: 24px;
+    line-height: 24px;;
   }
 
   .header{
@@ -62,6 +62,7 @@
     background-color: var(--blue);
     padding: 0px;
     margin: 0px 8px;
+    --ion-color-base: var(--blue) !important;
   }
 
   .center *{
@@ -95,11 +96,17 @@
   .fix-bot{
     position: fixed;
     bottom: 56px;
-    width: 100%;
+    width: calc(100% - 48px);
+    margin: auto 24px;
   }
 
   .border-top{
     border-top: 1px solid rgb(200, 200, 200);
+  }
+
+  .list-margin{
+    width: calc(100% - 48px);
+    margin: auto 24px;
   }
 
   ion-tab-button{
@@ -174,8 +181,6 @@
     line-height: 20px;
     color: var(--b87);
   }
-
- 
 
   /* week div */
 
