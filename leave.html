@@ -85,12 +85,12 @@
                 </ion-item>
               </ion-list>
     
-              <ion-list class="border-top">
-                <ion-item class="noLines greyBg">
+              <ion-list>
+                <ion-item class="greyBg">
                   <ion-label style="color: var(--b54);">Collegues on leave</ion-label>
                 </ion-item>
                 
-                <ion-item class="noLines greyBg" button onclick="testClick()">
+                <ion-item class="greyBg" button onclick="testClick()">
                   <ion-avatar slot="start">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
                   </ion-avatar>
@@ -100,7 +100,7 @@
                   </ion-label>
                 </ion-item>
     
-                <ion-item class="noLines greyBg" button onclick="testClick()">
+                <ion-item class="greyBg" button onclick="testClick()">
                   <ion-avatar slot="start">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
                   </ion-avatar>
@@ -110,7 +110,7 @@
                   </ion-label>
                 </ion-item>
     
-                <ion-item class="noLines greyBg" button onclick="testClick()">
+                <ion-item class="greyBg" button onclick="testClick()">
                   <ion-avatar slot="start">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
                   </ion-avatar>
@@ -121,7 +121,7 @@
                 </ion-item>
     
                 <!-- spacer for fixed button -->
-                <ion-item class="noLines greyBg">
+                <ion-item class="greyBg">
                   <div style="height: 72px;"></div>
                 </ion-item>
               </ion-list>
@@ -135,12 +135,46 @@
         <!-- requests -->
           <ion-tab tab="tab-requests">
             <ion-list>
-              <ion-item>Requst</ion-item>
-              <ion-item>Requst</ion-item>
-              <ion-item>Requst</ion-item>
-              <ion-item>Requst</ion-item>
-              <ion-item>Requst</ion-item>
-              <ion-item>Requst</ion-item>
+
+              <a class="item-comp">
+                    <p class="">
+                      <strong>9 – 11 Mar 2020</strong><br>
+                      8:00 – 17:00 (16 h)<br> 
+                      <span style="color:var(--green);">Approved vacation</span>
+                      
+                    </p>
+                    
+                    <div style="min-height: 100%; display: flex;">
+                      <div style="height:52px; width:52px; display: flex; margin: auto;">
+                        <img style="margin: auto;" src="./mat/Icons/x.svg">
+                      </div>
+                    </div>
+              </a>
+
+              <a class="item-comp">
+                  <p class="">
+                    <strong>9 – 11 Mar 2020</strong><br>
+                    8:00 – 17:00 (16 h)<br> 
+                    Pending vacation
+                    
+                  </p>
+                  
+                  <div style="min-height: 100%; display: flex;">
+                    <div style="height:52px; width:52px; display: flex; margin: auto;">
+                      <img style="margin: auto;" src="./mat/Icons/x.svg">
+                    </div>
+                  </div>
+              </a>
+
+              <a class="item-comp">
+                <p class="">
+                  <strong>9 – 11 Mar 2020</strong><br>
+                  8:00 – 17:00 (16 h)<br> 
+                  <span style="color:var(--red);">Canceled</span>
+                  
+                </p>
+              </a>
+
             </ion-list>
           </ion-tab>
         
@@ -149,9 +183,9 @@
               <ion-label>Apply for leave</ion-label>
             </ion-tab-button>
         
-            <ion-tab-button tab="tab-requests" ">          
+            <ion-tab-button tab="tab-requests">          
               <ion-label>Requests</ion-label>
-              <ion-badge>6</ion-badge>
+              <ion-badge>1</ion-badge>
             </ion-tab-button>
           </ion-tab-bar>
           
