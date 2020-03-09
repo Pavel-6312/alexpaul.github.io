@@ -130,6 +130,7 @@
     border-radius: 0.1px;
     box-shadow: 0px 0px 0px 4px rgba(217,0,0,0.15);
     width: 78px;
+    white-space: nowrap;
   }
 
   .att-cont-1 p{
