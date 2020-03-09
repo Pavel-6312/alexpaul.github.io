@@ -24,20 +24,18 @@
   <body>
 
   <ion-app>
+    
     <!-- menu -->
     <ion-menu content-id="main-content">
-        <menu-logo></menu-logo>
-        <ion-content>
-          <div class="fix-bot">
-            <ion-menu-toggle auto-hide="false">
-              <menu-items></menu-items>
-            </ion-menu-toggle>
-          </div>
-        </ion-content>
-      </ion-menu>
+      <menu-logo></menu-logo>
+      <ion-content>
+        <menu-items></menu-items>
+      </ion-content>
+    </ion-menu>
   
-    <ion-page class="ion-page" id="main-content">
+    <ion-page class="ion-page" id="main-content" style="overflow: hidden;">
 
+    <!-- header -->
       <div class="header">
         <ion-menu-toggle>
           <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
@@ -45,33 +43,32 @@
 
         <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
       </div>
+      
+      <img src="./mat/profile.svg" style="margin-top: auto; max-height:160px; min-height: 80px;">
 
-      <ion-content>
-        <div class=" center" style="display: flex; flex-direction: column;">
-          <img src="./mat/profile.svg" style="margin: 5vh auto 24px auto;">
-          <p style="font-size:18px; text-align: center; margin:0 auto 24px auto;">Jane Parker<br><span style="color: var(--b54);">Shireburn Group</span></p>
-        </div>
-        
-        <ion-list class="border-top list-margin">  
-          <ion-item>
+      <p style="font-size:18px; text-align: center; margin:16px auto auto auto;">
+        Jane Parker<br>
+        <span style="color: var(--b54);">Shireburn Group</span>
+      </p>
+
+      <div class="list-margin">  
+          <a class="item-comp">
             <ion-label>Notifications</ion-label>
-          </ion-item>
+          </a>
 
-          <ion-item>
+          <a class="item-comp">
               <ion-label>Log in with anothe account</ion-label>
-          </ion-item>
+          </a>
 
-          <ion-item>
+          <a class="item-comp">
             <ion-label>Log out</ion-label>
-          </ion-item>
+          </q>
 
-          <ion-item href="https://www.shireburn.com/dataprotection/mobile/">
+          <a class="item-comp" href="https://www.shireburn.com/dataprotection/mobile/">
             <ion-label>Terms and conditions <span>↗</span></ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-
-
+          </a>
+        
+      </div>
 
     </ion-page>
   </ion-app>
