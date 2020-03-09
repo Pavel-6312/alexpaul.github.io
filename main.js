@@ -2,7 +2,7 @@
 class MenuItems extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <div class="fix-bot">
+            <div>
                 <ion-menu-toggle auto-hide="false">
                     <a class="item-comp" href="./attendance.html">
                         <ion-label>Attendance</ion-label>
