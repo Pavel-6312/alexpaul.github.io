@@ -34,7 +34,6 @@
     display: flex;
     background: var(--brand);
     z-index: 9;
-    margin-bottom: 24px;
   }
 
   .w{
@@ -108,7 +107,7 @@
   }
 
   .list-margin{
-    margin: 24px 24px auto 24px;
+    margin: 0 24px auto 24px;
   }
 
   ion-tab-button{
