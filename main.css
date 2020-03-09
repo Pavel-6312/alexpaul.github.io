@@ -27,6 +27,7 @@
   *{
     font-size: 16px;
     line-height: 24px;
+    color: var(--b87);
   }
 
   .header{
@@ -104,4 +105,90 @@
 
   ion-tab-button{
     background: var(--b5);
+  }
+
+/* attendance card */
+  .attendance-day-card {
+    display: flex;
+    min-height: 80px;
+    box-shadow:inset 0px -1px var(--b17);
+    justify-content: space-between;
+    text-decoration: none;
+  }
+
+  .sunday{
+    box-shadow:none;
+  }
+
+  .attendance-day-card:nth-child(1){
+    margin-left: auto; 
+    display: flex; 
+  }
+
+  .today {
+    color: var(--red) !important;
+    background: rgba(217,0,0,0.15);
+    border-radius: 0.1px;
+    box-shadow: 0px 0px 0px 4px rgba(217,0,0,0.15);
+    width: 76px;
+  }
+
+  .att-cont-1 p{
+    color: var(--b54); 
+    font-size: 16px; 
+    margin: 8px 0 0 12px;
+  }
+
+  .att-cont-1 div{
+    display: flex; 
+    margin: 12px 8px 8px 8px;
+  }
+
+  .att-cont-1 div:nth-child(1){ 
+    height: 18px; 
+    width: 18px; 
+    border-radius: 50%; 
+    margin:5px;
+  }
+
+  .att-cont-1 div p{
+    color: var(--b87); 
+    font-size: 18px; 
+    margin: auto 0 auto 0;
+  }
+
+  .att-cont-2 div{
+    height: 40px;
+    width:36px;
+    display:flex;
+    margin:0 0 0 auto;
+  }
+
+  .att-cont-2 img{
+    margin: auto;
+  }
+
+  .att-cont-2 p{
+    font-size: 18px;
+    margin: 8px 12px 12px 12px;
+    line-height: 20px;
+  }
+
+ 
+
+  /* week div */
+
+  .week-div {
+    display: flex; 
+    margin: 12px 4px 12px 4px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .week-div div{
+    height:6px; 
+    width:6px; 
+    transform: rotate(45deg);
+    background: var(--b17); 
+    margin: 0 auto;
   }

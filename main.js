@@ -36,7 +36,41 @@ class MenuLogo extends HTMLElement {
 }
 customElements.define('menu-logo', MenuLogo);
 
-$("ion-item").attr("detail", "false").attr("lines", "full");
+// Week div
+class WeekDiv extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <div class="week-div">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div> 
+            <div></div>
+            <div></div>             
+        </div>
+        `;
+    }
+}
+customElements.define('week-div', WeekDiv);
 
+
+$("ion-item").attr("detail", "false").attr("lines", "full");
 $(".noLines").attr("lines", "none");
 $(".greyBg").attr("style", "--background: var(--b5);");
