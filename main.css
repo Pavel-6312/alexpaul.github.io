@@ -91,7 +91,7 @@
   }
 
   menu-items{
-    margin: auto 24px auto 24px;
+    margin: auto 24px auto 24px !important;
   }
 
   h2 {
