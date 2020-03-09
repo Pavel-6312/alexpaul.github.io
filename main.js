@@ -2,9 +2,9 @@
 class MenuItems extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <ion-item href="./attendance.html">
+            <a class="item-comp" href="./attendance.html">
                 <ion-label>Attendance</ion-label>
-            </ion-item>
+            </a>
 
             <ion-item href="./leave.html">
                 <ion-label>Leave</ion-label>
