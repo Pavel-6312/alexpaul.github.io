@@ -34,7 +34,7 @@ customElements.define('menu-items', MenuItems);
 class MenuLogo extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <img class="logo" src="./mat/indigo-mobile-br.svg">
+        <img style="width: calc(100% - 48px); margin:24px 24px 24px 24px;" class="logo" src="./mat/indigo-mobile-br.svg">
         `;
     }
 }

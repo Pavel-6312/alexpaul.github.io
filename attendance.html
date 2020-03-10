@@ -26,7 +26,7 @@
 
   <ion-app>
 
-    <!-- menu -->
+<!-- menu -->
     <ion-menu content-id="main-content">
       <div style="display: flex; 
       flex-direction:column; 
@@ -34,23 +34,24 @@
         <menu-logo></menu-logo>
        <menu-items></menu-items>
       </div>
-    </ion-menu>2
+    </ion-menu>
   
     <ion-page class="ion-page" id="main-content">
-
-      <div class="header">
-        <ion-menu-toggle>
-          <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
-        </ion-menu-toggle>
-        <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
-      </div>
+      
+<!-- header -->
+      <div class="header w">
+          <ion-menu-toggle>
+            <div class="btn-ico center"><img src="./mat/Icons/menu.svg"></div>
+          </ion-menu-toggle>
+          <img style="margin: auto 12px auto 0;" src="./mat/indigo-br.svg">
+      </div> 
 
       <ion-content>
         
         <a href=" " class="attendance-day-card">
           <div class="att-cont-1">
 
-            <p class="today">Mon 9 Mar</p>
+            <p class="date">Mon 9 Mar</p>
 
             <div>
               <div style="background: red;"></div>
@@ -110,7 +111,7 @@
           </div>
         </a>
 
-        <a href=" " class="attendance-day-card">
+        <a href=" " class="attendance-day-card today">
           <div class="att-cont-1">
 
             <p>Thu 12 Mar</p>

@@ -35,22 +35,23 @@
 
 <!-- page -->
   <ion-page class="ion-page" id="main-content">
+
+<!-- header -->
+    <div class="header w">
+        <ion-menu-toggle>
+          <div class="btn-ico center"><img src="./mat/Icons/menu.svg"></div>
+        </ion-menu-toggle>
+        <img style="margin: auto 12px auto 0;" src="./mat/indigo-br.svg">
+    </div> 
+
     <ion-tabs>
 
 <!-- form -->
       <ion-tab tab="tab-leave">
         <ion-content>
-          
-          <!-- header -->
-          <div class="header">
-              <ion-menu-toggle>
-                <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
-              </ion-menu-toggle>
-              <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
-          </div> 
 
-          <ion-list style="padding:24px;">
-            <a class="item-comp" style="min-height: 64px;" href="./leave-type.html">
+          <ion-list style="padding:24px 24px 24px 24px;">
+            <a class="item-comp header-margin" style="min-height: 64px;" href="./leave-type.html">
               <ion-label>Leave type</ion-label>
               <ion-note style="text-align:right;" slot="end" color="primary">Vacation <br>
               <span style="color:var(--b54); font-size:14px;">80h available</span></ion-note>
@@ -86,16 +87,8 @@
 <!-- team on leave -->
       <ion-tab tab="tab-onleave">
         <ion-content>
-          <!-- header -->
-          <div class="header">
-              <ion-menu-toggle>
-                <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
-              </ion-menu-toggle>
-              <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
-          </div> 
-
           <ion-list> 
-            <a class="item-comp" style="min-height: 64px;">
+            <a class="item-comp header-margin" style="min-height: 64px;">
               <label style="color:var(--b54);">From</label>
 
               <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
@@ -104,8 +97,7 @@
 
               <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
             </a>
-
-                       
+          
             <ion-item button onclick="testClick()">
               <ion-avatar slot="start">
                 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
@@ -144,16 +136,9 @@
       <ion-tab tab="tab-requests">
         <ion-content>
 
-          <!-- header -->
-            <div class="header">
-              <ion-menu-toggle>
-                <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
-              </ion-menu-toggle>
-              <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
-            </div> 
-
           <ion-list>
-            <a class="item-comp">
+
+            <a class="item-comp header-margin">
                   <p class="">
                     <strong>9 – 11 Mar 2020</strong><br>
                     8:00 – 17:00 (16 h)<br> 
@@ -190,6 +175,33 @@
                 <span style="color:var(--red);">Canceled</span>
                 
               </p>
+            </a>
+
+            <a class="item-comp">
+                <p class="">
+                  <strong>9 – 11 Mar 2020</strong><br>
+                  8:00 – 17:00 (16 h)<br> 
+                  <span style="color:var(--red);">Canceled</span>
+                  
+                </p>
+            </a>
+
+            <a class="item-comp">
+                <p class="">
+                  <strong>9 – 11 Mar 2020</strong><br>
+                  8:00 – 17:00 (16 h)<br> 
+                  <span style="color:var(--red);">Canceled</span>
+                  
+                </p>
+            </a>
+
+            <a class="item-comp">
+                <p class="">
+                  <strong>9 – 11 Mar 2020</strong><br>
+                  8:00 – 17:00 (16 h)<br> 
+                  <span style="color:var(--red);">Canceled</span>
+                  
+                </p>
             </a>
           </ion-list>
         </ion-content>
