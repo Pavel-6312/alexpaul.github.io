@@ -65,6 +65,8 @@ class WeekDiv extends HTMLElement {
             <div></div>
             <div></div>
             <div></div>
+            <div></div>
+            <div></div>
             <div></div> 
             <div></div>
             <div></div>             

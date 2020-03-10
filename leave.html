@@ -83,52 +83,49 @@
                 </ion-item>
               </ion-list>
     
-              <ion-list>
-                <ion-item class="greyBg">
-                  <ion-label style="color: var(--b54);">Collegues on leave</ion-label>
-                </ion-item>
-                
-                <ion-item class="greyBg" button onclick="testClick()">
-                  <ion-avatar slot="start">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
-                  </ion-avatar>
-                  <ion-label>
-                    <h3>Robert Knight</h3>
-                    <p>Vacation 2-12 Feb 2020</p>
-                  </ion-label>
-                </ion-item>
-    
-                <ion-item class="greyBg" button onclick="testClick()">
-                  <ion-avatar slot="start">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
-                  </ion-avatar>
-                  <ion-label>
-                    <h3>Robert Knight</h3>
-                    <p>Vacation 2-12 Feb 2020</p>
-                  </ion-label>
-                </ion-item>
-    
-                <ion-item class="greyBg" button onclick="testClick()">
-                  <ion-avatar slot="start">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
-                  </ion-avatar>
-                  <ion-label>
-                    <h3>Robert Knight</h3>
-                    <p>Vacation 2-12 Feb 2020</p>
-                  </ion-label>
-                </ion-item>
-    
-                <!-- spacer for fixed button -->
-                <ion-item class="greyBg">
-                  <div style="height: 72px;"></div>
-                </ion-item>
-              </ion-list>
-    
               <div slot="fixed" style="bottom:8px; padding: auto 8px; width: 100%">
                   <ion-button class="btn bl" color="primary">Submit leave request</ion-button>
               </div>
             </ion-content>
           </ion-tab>
+
+        <!-- See who is on leave -->
+        <ion-tab tab="tab-onleave">
+          <ion-content>
+    
+            <ion-list>              
+              <ion-item class="" button onclick="testClick()">
+                <ion-avatar slot="start">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Robert Knight</h3>
+                  <p>Vacation 2-12 Feb 2020</p>
+                </ion-label>
+              </ion-item>
+  
+              <ion-item class="" button onclick="testClick()">
+                <ion-avatar slot="start">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Robert Knight</h3>
+                  <p>Vacation 2-12 Feb 2020</p>
+                </ion-label>
+              </ion-item>
+  
+              <ion-item class="" button onclick="testClick()">
+                <ion-avatar slot="start">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Robert Knight</h3>
+                  <p>Vacation 2-12 Feb 2020</p>
+                </ion-label>
+              </ion-item>
+
+          </ion-content>
+        </ion-tab>
 
         <!-- requests -->
           <ion-tab tab="tab-requests">
@@ -180,11 +177,16 @@
             <ion-tab-button tab="tab-leave">
               <ion-label>Apply for leave</ion-label>
             </ion-tab-button>
-        
+
+            <ion-tab-button tab="tab-onleave">
+                <ion-label>Team on leave</ion-label>
+              </ion-tab-button>
+
             <ion-tab-button tab="tab-requests">          
-              <ion-label>Requests</ion-label>
-              <ion-badge>1</ion-badge>
-            </ion-tab-button>
+                <ion-label>Requests</ion-label>
+                <ion-badge>1</ion-badge>
+              </ion-tab-button>
+        
           </ion-tab-bar>
           
         </ion-tabs>       
