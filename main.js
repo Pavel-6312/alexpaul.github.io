@@ -76,7 +76,7 @@ class WeekDiv extends HTMLElement {
 }
 customElements.define('week-div', WeekDiv);
 
-$("ion-item").attr("detail", "false").attr("lines", "none").attr("style", "--background: var(--w);");
+$("ion-item").attr("detail", "false").attr("lines", "full").attr("style", "--background: var(--w);");
 
 $(".greyBg").attr("style", "--background: var(--b5);");
 
