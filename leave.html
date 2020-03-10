@@ -35,57 +35,64 @@
 
 <!-- page -->
   <ion-page class="ion-page" id="main-content">
-
-<!-- header -->
-    <div class="header">
-        <ion-menu-toggle>
-          <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
-        </ion-menu-toggle>
-        <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
-    </div> 
-
     <ion-tabs>
+
 <!-- form -->
       <ion-tab tab="tab-leave">
-          <ion-content>
+        <ion-content>
+          
+          <!-- header -->
+          <div class="header">
+              <ion-menu-toggle>
+                <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
+              </ion-menu-toggle>
+              <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
+          </div> 
 
-            <ion-list style="padding:24px;">
-              <a class="item-comp" style="min-height: 64px;" href="./leave-type.html">
-                <ion-label>Leave type</ion-label>
-                <ion-note style="text-align:right;" slot="end" color="primary">Vacation <br>
-                <span style="color:var(--b54); font-size:14px;">80h available</span></ion-note>
-              </a>
-      
-              <a class="item-comp" style="min-height: 64px;">
-                <ion-label>Date from</ion-label>
-                <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
-              </a>
+          <ion-list style="padding:24px;">
+            <a class="item-comp" style="min-height: 64px;" href="./leave-type.html">
+              <ion-label>Leave type</ion-label>
+              <ion-note style="text-align:right;" slot="end" color="primary">Vacation <br>
+              <span style="color:var(--b54); font-size:14px;">80h available</span></ion-note>
+            </a>
+    
+            <a class="item-comp" style="min-height: 64px;">
+              <ion-label>Date from</ion-label>
+              <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+            </a>
 
-              <a class="item-comp" style="min-height: 64px;">
-                <ion-label>Date to</ion-label>
-                <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
-              </a>
-      
-              <a class="item-comp" style="min-height: 64px;"href="./leave-time.html">
-                <ion-label>Leave time</ion-label>
-                <ion-note slot="end">Full day</ion-note>
-              </a>
-      
-              <a class="item-comp" style="min-height: 64px;" href="./leave-remark.html">
-                <ion-label>Remark</ion-label>
-                <ion-note slot="end">Add</ion-note>
-              </a>
-            </ion-list>
+            <a class="item-comp" style="min-height: 64px;">
+              <ion-label>Date to</ion-label>
+              <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+            </a>
+    
+            <a class="item-comp" style="min-height: 64px;"href="./leave-time.html">
+              <ion-label>Leave time</ion-label>
+              <ion-note slot="end">Full day</ion-note>
+            </a>
+    
+            <a class="item-comp" style="min-height: 64px;" href="./leave-remark.html">
+              <ion-label>Remark</ion-label>
+              <ion-note slot="end">Add</ion-note>
+            </a>
+          </ion-list>
 
-            <div slot="fixed" style="bottom:0px; width: 100%">
-                <ion-button class="btn bl" color="primary">Submit leave request</ion-button>
-            </div>
-          </ion-content>
+          <div slot="fixed" style="bottom:0px; width: 100%">
+              <ion-button class="btn bl" color="primary">Submit leave request</ion-button>
+          </div>
+        </ion-content>
       </ion-tab>
 
 <!-- on leave -->
       <ion-tab tab="tab-onleave">
         <ion-content>
+          <!-- header -->
+          <div class="header">
+              <ion-menu-toggle>
+                <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
+              </ion-menu-toggle>
+              <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
+          </div> 
 
           <ion-item>
             <label style="color:var(--b54)">From</label>
@@ -131,13 +138,37 @@
 
 <!-- requests -->
       <ion-tab tab="tab-requests">
-        <ion-list>
+        <ion-content>
 
-          <a class="item-comp">
+          <!-- header -->
+            <div class="header">
+              <ion-menu-toggle>
+                <div class="btn-ico center"><img src="./mat/Icons/menu-w.svg"></div>
+              </ion-menu-toggle>
+              <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
+            </div> 
+
+          <ion-list>
+            <a class="item-comp">
+                  <p class="">
+                    <strong>9 – 11 Mar 2020</strong><br>
+                    8:00 – 17:00 (16 h)<br> 
+                    <span style="color:var(--green);">Approved vacation</span>
+                    
+                  </p>
+                  
+                  <div style="min-height: 100%; display: flex;">
+                    <div style="height:52px; width:52px; display: flex; margin: auto;">
+                      <img style="margin: auto;" src="./mat/Icons/x.svg">
+                    </div>
+                  </div>
+            </a>
+
+            <a class="item-comp">
                 <p class="">
                   <strong>9 – 11 Mar 2020</strong><br>
                   8:00 – 17:00 (16 h)<br> 
-                  <span style="color:var(--green);">Approved vacation</span>
+                  Pending vacation
                   
                 </p>
                 
@@ -146,52 +177,38 @@
                     <img style="margin: auto;" src="./mat/Icons/x.svg">
                   </div>
                 </div>
-          </a>
+            </a>
 
-          <a class="item-comp">
+            <a class="item-comp">
               <p class="">
                 <strong>9 – 11 Mar 2020</strong><br>
                 8:00 – 17:00 (16 h)<br> 
-                Pending vacation
+                <span style="color:var(--red);">Canceled</span>
                 
               </p>
-              
-              <div style="min-height: 100%; display: flex;">
-                <div style="height:52px; width:52px; display: flex; margin: auto;">
-                  <img style="margin: auto;" src="./mat/Icons/x.svg">
-                </div>
-              </div>
-          </a>
-
-          <a class="item-comp">
-            <p class="">
-              <strong>9 – 11 Mar 2020</strong><br>
-              8:00 – 17:00 (16 h)<br> 
-              <span style="color:var(--red);">Canceled</span>
-              
-            </p>
-          </a>
-
-        </ion-list>
+            </a>
+          </ion-list>
+        </ion-content>
       </ion-tab>
-    
+
+<!-- tab bar -->
       <ion-tab-bar slot="bottom" style="padding-bottom: 0px;">
-        <ion-tab-button tab="tab-leave">
-          <ion-label>Leave form</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="tab-onleave">
-            <ion-label>Team on leave</ion-label>
+          <ion-tab-button tab="tab-leave">
+            <ion-label>Leave form</ion-label>
           </ion-tab-button>
 
-        <ion-tab-button tab="tab-requests">          
-            <ion-label>Requests</ion-label>
-            <ion-badge>1</ion-badge>
-          </ion-tab-button>
-    
+          <ion-tab-button tab="tab-onleave">
+              <ion-label>Team on leave</ion-label>
+            </ion-tab-button>
+
+          <ion-tab-button tab="tab-requests">          
+              <ion-label>Requests</ion-label>
+              <ion-badge>1</ion-badge>
+            </ion-tab-button>
+      
       </ion-tab-bar>
+      
     </ion-tabs>       
-
   </ion-page>
 </ion-app>
 <ion-menu-controller></ion-menu-controller>

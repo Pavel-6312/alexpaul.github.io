@@ -107,11 +107,6 @@
     --background:var(--red);
   }
 
-  ion-tab{
-    margin-top: 52px; 
-    overflow: hidden;
-  }
-
   menu-items{
     margin: auto 24px auto 24px !important;
   }
