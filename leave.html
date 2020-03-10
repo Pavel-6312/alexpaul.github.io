@@ -83,7 +83,7 @@
         </ion-content>
       </ion-tab>
 
-<!-- on leave -->
+<!-- team on leave -->
       <ion-tab tab="tab-onleave">
         <ion-content>
           <!-- header -->
@@ -94,14 +94,18 @@
               <img style="margin: auto 12px auto auto;" src="./mat/indigo-w.svg">
           </div> 
 
-          <ion-item>
-            <label style="color:var(--b54)">From</label>
-            <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
-            <label style="color:var(--b54)">to</label>
-            <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
-          </ion-item>
+          <ion-list> 
+            <a class="item-comp" style="min-height: 64px;">
+              <label style="color:var(--b54);">From</label>
 
-          <ion-list>              
+              <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+
+              <label style="color:var(--b54);">to</label>
+
+              <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+            </a>
+
+                       
             <ion-item button onclick="testClick()">
               <ion-avatar slot="start">
                 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
@@ -207,7 +211,7 @@
             </ion-tab-button>
       
       </ion-tab-bar>
-      
+
     </ion-tabs>       
   </ion-page>
 </ion-app>
