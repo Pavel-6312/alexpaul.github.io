@@ -82,6 +82,7 @@
     margin:24px 24px 24px 24px;
   }
 
+  /* ionic override */
   ion-item{
     --min-height:56px;
   }
@@ -92,6 +93,23 @@
 
   ion-label span{
     color: var(--b17);
+  }
+
+  ion-datetime, ion-note{
+    color:var(--blue); 
+    padding:0px;
+    line-height: 20px;
+  }
+
+  ion-badge{
+    font-size:12px;
+    line-height: 16px;
+    --background:var(--red);
+  }
+
+  ion-tab{
+    margin-top: 52px; 
+    overflow: hidden;
   }
 
   menu-items{
