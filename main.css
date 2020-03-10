@@ -34,12 +34,17 @@
     display: flex;
     background: var(--brand);
     z-index: 9;
+    height: 52px;
   }
 
   .w{
     background: var(--w);
-    box-shadow: 0px 1px 3px var(--b17);
     z-index: 5;
+    color: var(--b87);
+  }
+
+  .shadow{
+    box-shadow: 0px 1px 3px var(--b17);
   }
 
   .btn-ico{
@@ -57,6 +62,7 @@
     background-color: var(--w0);
     border-radius: 3px;
     padding:0px 12px;
+    margin-bottom: 8px !important;
   }
 
   .bl{
@@ -97,6 +103,37 @@
     font-size: 18px;
     color: var(--b54);
     font-weight: 400;
+  }
+
+  form{
+    padding: 24px;
+    margin-bottom: auto;
+  }
+
+  form label{
+    font-size:14px;
+    color:var(--b54);
+    line-height: 20px;
+    margin: 8px;
+    display: block;
+  }
+
+  form a {
+    font-size:16px;
+    line-height: 20px;
+    margin: 8px 0;
+    display: block;
+    text-align: center;
+    padding: 16px 0;
+    border-radius: 3px;
+    text-decoration: underline;
+  }
+
+  input {
+    height: 52px;
+    border: 1px solid var(--b17);
+    border-radius: 3px;
+    width: 100%;
   }
 
   .fix-bot{
@@ -218,3 +255,12 @@
     margin-top: auto;
     margin-bottom: auto; 
   }
+
+  /* password */
+  .password + .unmask {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  form p { position: relative; }
