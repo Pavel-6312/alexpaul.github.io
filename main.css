@@ -61,11 +61,10 @@
   }
 
   .btn{
-    display: flex;
     width: auto;
     height: 52px;
     color: white;
-    background-color: var(--w0);
+    background: var(--w0);
     border-radius: 3px;
     padding:0px 12px;
     margin-bottom: 8px !important;
@@ -75,7 +74,9 @@
     background-color: var(--brand);
     padding: 0px;
     margin: 0px 8px;
-    --ion-color-base: var(--brand) !important;
+    width: calc(100% - 16px);
+    text-align: center;
+    transition: 0.1s ease-in;
   }
 
   .center *{

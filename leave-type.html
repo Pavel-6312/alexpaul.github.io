@@ -38,7 +38,7 @@
               <ion-radio-group>
                 
                 <ion-item class="header-margin">
-                  <ion-radio  value="Vacation"></ion-radio>
+                  <ion-radio  value="Vacation" time></ion-radio>
                   <ion-label>Vacation 
                   <br><span style="color:var(--b54); font-size:14px;">Available 80h (10 days) </span></ion-label>
                 </ion-item>
@@ -102,7 +102,7 @@
             </ion-list>
 
             <div slot="fixed" style="bottom:0px; width: 100%">
-                <ion-button href="./leave.html" class="btn bl" color="primary" onclick=saveLeaveType()>Done</ion-button>
+                <button href="./leave.html" class="btn bl" color="primary" onclick=saveLeaveType()>Done</button>
             </div>
 
       </ion-content>
@@ -127,6 +127,7 @@
         localStorage.setItem("leaveType", radios[i].value);
       }
     }
+    window.location.href = './leave.html';
   }
 </script>
 </html>
