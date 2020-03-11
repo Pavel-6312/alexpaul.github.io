@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Indigo mobile</title> 
+<link rel="shortcut icon" href="https://indigo-testing.shireburn.com//Content/favicon.png?version=1.65.0.1">
 
 <!-- reset -->
 <link rel="stylesheet" type = "text/css" href="./reset.css"/>
@@ -64,13 +65,22 @@
             
             <a class="item-comp" style="min-height: 64px;" href="./leave-type.html">
               <ion-label>Leave type</ion-label>
-              <ion-note style="text-align:right;" slot="end" color="primary">Vacation <br>
-              <span style="color:var(--b54); font-size:14px;">80h available</span></ion-note>
+              <ion-note id="leaveType" style="text-align:right;" slot="end" color="primary">
+                <script>document.write(localStorage.getItem('leaveType'));</script>
+                <br>
+                <span style="color:var(--b54); font-size:14px;">
+                  <script>document.write(localStorage.getItem('leaveType'));</script>
+                </span>
+              </ion-note>
             </a>
     
             <a class="item-comp" style="min-height: 64px;"href="./leave-time.html">
               <ion-label>Leave time</ion-label>
-              <ion-note slot="end">Full day</ion-note>
+              <ion-note slot="end">
+                <script>
+                  document.write(localStorage.getItem('leaveTime'));
+                </script>
+              </ion-note>
             </a>
     
             <a class="item-comp" style="min-height: 64px; box-shadow:none" href="./leave-remark.html">
@@ -79,9 +89,11 @@
             </a>
 
             <p id="remarkItem" style="font-size:14px; line-height:20px;">
-            <script>
-              document.write(localStorage.getItem('remarkValue'));
-            </script>
+              <script>
+                if(localStorage.getItem('remarkValue') != null) {
+                  document.write(localStorage.getItem('remarkValue'));
+                }
+              </script>
             </p>
 
 <!-- spacer for fixed button -->
@@ -242,4 +254,9 @@
 </body>
 
 <script type="text/javascript" src='./main.js'></script>
+<script>
+// Find leave type element
+document.getElementById('leaveType')
+
+</script>
 </html>

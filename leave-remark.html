@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Indigo mobile</title>
-  
-  <link rel="stylesheet" type = "text/css" href="./reset.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
-  <link rel="stylesheet" type = "text/css" href="./main.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Indigo mobile</title> 
+<link rel="shortcut icon" href="https://indigo-testing.shireburn.com//Content/favicon.png?version=1.65.0.1">
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+<!-- reset -->
+<link rel="stylesheet" type = "text/css" href="./reset.css"/>
 
+<!-- ionic -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
 
-  <script type="module">
-    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
-    window.pickerController = pickerController;
-  </script>
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- main -->
+<link rel="stylesheet" type = "text/css" href="./main.css" /> 
 </head>
+
 <body>
 
   <ion-app>
     <ion-page class="ion-page" id="main-content">
 
-      <div class="header w shadow">
-        <a href="./leave.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
+      <div class="header shadow">
+        <a onclick="saveRemark()" href="./leave.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
         <p style="margin:auto">Remark</p>
         <a class="btn-ico"></a>
       </div>
 
       <ion-content class="ion-padding">
-          <ion-textarea id="remarkArea" class="header-margin" placeholder="Enter remark here..." autofocus onchange="saveRemark()"></ion-textarea>
+          <ion-textarea id="remarkArea" class="header-margin" placeholder="Enter remark here..." autofocus></ion-textarea>
 
           <div slot="fixed" style="bottom:0px; width: 100%;">
-              <ion-button href="./leave.html" class="btn bl" color="primary">Done</ion-button>
+              <ion-button onclick="saveRemark()" href="./leave.html" class="btn bl" color="primary">Done</ion-button>
           </div>
       </ion-content>
 
@@ -44,7 +46,7 @@
   
   <ion-menu-controller></ion-menu-controller>
 
-  </body>
+</body>
 
 <script type="text/javascript" src='./main.js'></script>
 </html>

@@ -81,7 +81,6 @@ $("ion-item").attr("detail", "false").attr("lines", "full").attr("style", "--bac
 $(".greyBg").attr("style", "--background: var(--b5);");
 
 //Input management
-
 let dateFrom = document.getElementById("date-from");
 let dateTo = document.getElementById("date-to");
 let dateFromTeam = document.getElementById("dateFromTeam");
@@ -103,6 +102,4 @@ function saveRemark(){
 
     //Save it to the local storage
     localStorage.setItem('remarkValue', remarkAreaValue);
-
 };
-

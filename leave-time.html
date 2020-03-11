@@ -27,7 +27,7 @@
     <ion-page class="ion-page" id="main-content">
 
       <div class="header w shadow">
-        <a href="./leave.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
+        <a onclick="saveLeaveTime()" href="./leave.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
         <p style="margin:auto">Leave time</p>
         <a class="btn-ico"></a>
       </div>
@@ -60,7 +60,7 @@
         </ion-list>
 
         <div slot="fixed" style="bottom:0px; width: 100%;">
-          <ion-button href="./leave.html" class="btn bl" color="primary">Done</ion-button>
+          <ion-button onclick="saveLeaveTime()" href="./leave.html" class="btn bl" color="primary">Done</ion-button>
         </div>
       </ion-content>
 
@@ -72,4 +72,17 @@
 </body>
 
 <script type="text/javascript" src='./main.js'></script>
+<script>
+  // Select all radio items
+  let radios = document.getElementsByTagName('ion-radio');
+
+  // Loop to find the selected one
+  function saveLeaveTime(){
+    for(i=0;i<radios.length;i++){
+      if (radios[i].classList.contains('radio-checked')){
+        localStorage.setItem("leaveTime", radios[i].value);
+      }
+    }
+  }
+</script>
 </html>
