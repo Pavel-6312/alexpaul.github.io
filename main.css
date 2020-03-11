@@ -112,6 +112,10 @@
     margin: auto 24px auto 24px !important;
   }
 
+  textarea {
+    min-height: 70vh;
+  }
+
   h2 {
     font-size: 18px;
     color: var(--b54);

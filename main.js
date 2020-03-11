@@ -40,7 +40,7 @@ class MenuLogo extends HTMLElement {
 }
 customElements.define('menu-logo', MenuLogo);
 
-// Week div
+// Meek div
 class WeekDiv extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -76,7 +76,33 @@ class WeekDiv extends HTMLElement {
 }
 customElements.define('week-div', WeekDiv);
 
+// Ionic overrides
 $("ion-item").attr("detail", "false").attr("lines", "full").attr("style", "--background: var(--w);");
-
 $(".greyBg").attr("style", "--background: var(--b5);");
+
+//Input management
+
+let dateFrom = document.getElementById("date-from");
+let dateTo = document.getElementById("date-to");
+let dateFromTeam = document.getElementById("dateFromTeam");
+let dateToTeam = document.getElementById("dateToTeam");
+
+let storedDateFrom = localStorage.setItem("dateFrom", dateFrom.getAttribute("value"));
+let storedDateTo = localStorage.setItem("dateTo", dateFrom.getAttribute("value"));
+
+// Updates dates in team tab
+function updateTeamDates (){
+    dateFromTeam.setAttribute('value' , dateFrom.value);
+    dateToTeam.setAttribute('value' , dateTo.value);
+};
+
+function saveRemark(){
+
+    //Set variable for remark field value
+    let remarkAreaValue = document.getElementById('remarkArea').value;
+
+    //Save it to the local storage
+    localStorage.setItem('remarkValue', remarkAreaValue);
+
+};
 

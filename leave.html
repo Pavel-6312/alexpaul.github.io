@@ -54,12 +54,12 @@
     
             <a class="item-comp header-margin" style="min-height: 64px;">
               <ion-label>Date from</ion-label>
-              <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+              <ion-datetime id="date-from" display-format="DD MMM YYYY" value="2019-02-05T13:47:20.789"></ion-datetime>
             </a>
 
             <a class="item-comp" style="min-height: 64px;">
               <ion-label>Date to</ion-label>
-              <ion-datetime display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+              <ion-datetime id="date-to" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
             </a>
             
             <a class="item-comp" style="min-height: 64px;" href="./leave-type.html">
@@ -73,10 +73,20 @@
               <ion-note slot="end">Full day</ion-note>
             </a>
     
-            <a class="item-comp" style="min-height: 64px;" href="./leave-remark.html">
+            <a class="item-comp" style="min-height: 64px; box-shadow:none" href="./leave-remark.html">
               <ion-label>Remark</ion-label>
-              <ion-note slot="end">Add</ion-note>
+              <ion-note slot="end">Add</ion-note> 
             </a>
+
+            <p id="remarkItem" style="font-size:14px; line-height:20px;">
+            <script>
+              document.write(localStorage.getItem('remarkValue'));
+            </script>
+            </p>
+
+<!-- spacer for fixed button -->
+            <div style="height: 72px;"></div>    
+
           </ion-list>
 
           <div slot="fixed" style="bottom:0px; width: 100%">
@@ -92,11 +102,11 @@
             <a class="item-comp header-margin" style="min-height: 64px;">
               <label style="color:var(--b54);">From</label>
 
-              <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+              <ion-datetime id="dateFromTeam" style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
 
               <label style="color:var(--b54);">to</label>
 
-              <ion-datetime style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
+              <ion-datetime id="dateToTeam" style="color:var(--blue)" display-format="DD MMM YYYY" value="2020-02-05T13:47:20.789"></ion-datetime>
             </a>
           
             <ion-item button onclick="testClick()">
@@ -214,14 +224,14 @@
             <ion-label>Leave form</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="tab-onleave">
-              <ion-label>Team on leave</ion-label>
-            </ion-tab-button>
+          <ion-tab-button id="tabX" tab="tab-onleave" onclick="updateTeamDates()">
+            <ion-label>Team on leave</ion-label>
+          </ion-tab-button>
 
           <ion-tab-button tab="tab-requests">          
-              <ion-label>Requests</ion-label>
-              <ion-badge>1</ion-badge>
-            </ion-tab-button>
+            <ion-label>Requests</ion-label>
+            <ion-badge>1</ion-badge>
+          </ion-tab-button>
       
       </ion-tab-bar>
 
