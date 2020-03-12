@@ -38,25 +38,25 @@
               <ion-radio-group>
                 
                 <ion-item class="header-margin">
-                  <ion-radio  value="Vacation" time></ion-radio>
+                  <ion-radio  value="Vacation" id="80h"></ion-radio>
                   <ion-label>Vacation 
                   <br><span style="color:var(--b54); font-size:14px;">Available 80h (10 days) </span></ion-label>
                 </ion-item>
 
                 <ion-item >
-                  <ion-radio value="Vacation 2020"></ion-radio>
+                  <ion-radio value="Vacation 2020" id="40h"></ion-radio>
                   <ion-label style="margin-left: 12px;"> Vacation 2020
                   <br><span style="color:var(--b54); font-size:14px;">Available 40h (5 days)</span></ion-label>
                 </ion-item>
 
                 <ion-item >
-                  <ion-radio value="Vacation 2019" time-value="Available 32h"></ion-radio>
+                  <ion-radio value="Vacation 2019" id="32h"></ion-radio>
                   <ion-label style="margin-left: 12px;">Vacation 2019
                   <br><span style="color:var(--b54); font-size:14px;">Available 32h (4 days) </span></ion-label>
                 </ion-item>
 
                 <ion-item>
-                  <ion-radio value="Vacation 2018" time-value="Available 8h"></ion-radio>
+                  <ion-radio value="Vacation 2018" id="8h"></ion-radio>
                   <ion-label style="margin-left: 12px;">Vacation 2018
                   <br><span style="color:var(--b54); font-size:14px;">Available 8h (1 day) </span></ion-label>
                 </ion-item>
@@ -96,14 +96,14 @@
                 </ion-item>
 
                 <!-- spacer for fixed button -->
-                <div style="height: 72px;"></div> 
+                <!-- <div style="height: 72px;"></div>  -->
 
               </ion-radio-group>
             </ion-list>
 
-            <div slot="fixed" style="bottom:0px; width: 100%">
+            <!-- <div slot="fixed" style="bottom:0px; width: 100%">
                 <button href="./leave.html" class="btn bl" color="primary" onclick=saveLeaveType()>Done</button>
-            </div>
+            </div> -->
 
       </ion-content>
 
@@ -125,6 +125,8 @@
     for(i=0;i<radios.length;i++){
       if (radios[i].classList.contains('radio-checked')){
         localStorage.setItem("leaveType", radios[i].value);
+        
+        localStorage.setItem("leaveTypeTime", 'Available ' + radios[i].id);
       }
     }
     window.location.href = './leave.html';

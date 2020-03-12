@@ -102,4 +102,7 @@ function saveRemark(){
 
     //Save it to the local storage
     localStorage.setItem('remarkValue', remarkAreaValue);
+    
+    // Return to main page
+    window.location.href = './leave.html';
 };
