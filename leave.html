@@ -30,8 +30,6 @@ if (localStorage.getItem("leaveType") == null){
 if (localStorage.getItem("leaveTime") == null){
     localStorage.setItem('leaveTime', 'Full day')};
 
-
-
 </script>
 <body>
 <ion-app>
@@ -119,7 +117,7 @@ if (localStorage.getItem("leaveTime") == null){
           </ion-list>
 
           <div slot="fixed" style="bottom:0px; width: 100%">
-              <button class="btn bl" color="primary">Submit leave request</button>
+              <button onclick="presentAlert()" class="btn bl" color="primary">Submit leave request</button>
           </div>
         </ion-content>
       </ion-tab>
@@ -176,7 +174,7 @@ if (localStorage.getItem("leaveTime") == null){
       <ion-tab tab="tab-requests">
         <ion-content>
 
-          <ion-list>
+          <ion-list id="requests">
 
             <a class="item-comp header-margin">
                   <p class="">

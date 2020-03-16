@@ -106,3 +106,13 @@ function saveRemark(){
     // Return to main page
     window.location.href = './leave.html';
 };
+
+function presentAlert() {
+  const alert = document.createElement('ion-alert');
+  alert.header = 'Leave request submitted';
+  alert.message = 'Check ‘Requests’ tab to see leave status updates.';
+  alert.buttons = ['OK'];
+
+  document.body.appendChild(alert);
+  return alert.present();
+};
