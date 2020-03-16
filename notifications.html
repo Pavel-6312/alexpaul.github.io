@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Indigo mobile</title>
+  
+  <link rel="stylesheet" type = "text/css" href="./reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+  <link rel="stylesheet" type = "text/css" href="./main.css" />
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+
+
+  <script type="module">
+    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.pickerController = pickerController;
+  </script>
+</head>
+
+<script>
+
+</script>
+
+<body>
+
+  <ion-app>
+    <ion-page class="ion-page" id="main-content">
+
+      <div class="header w shadow">
+        <a href="./profile.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
+        <p style="margin:auto">Notification settings</p>
+        <a class="btn-ico"></a>
+      </div>
+
+      <ion-content>
+        <ion-list>
+          <ion-radio-group>
+            <div style="margin:76px 24px 24px 24px; color:var(--b54);">
+              <p>Receive notifications 15 min before your shift starts and 15 min after your shift ends.</p>
+            </div>
+
+            <ion-item lines="full">
+              <ion-label>Shift notifications</ion-label>
+              <ion-toggle slot="start" name="custom"></ion-toggle>
+            </ion-item>
+
+            <div class="list-spacer"></div>
+
+            <div style="margin:24px; color:var(--b54);">
+              <p>Receive notifications if you haven’t clocked in 15 min after your shift started and 15 min after your shift have ended.</p>
+            </div>
+
+            <ion-item lines="full">
+              <ion-label>Reminder notifications</ion-label>
+              <ion-toggle slot="start" name="custom"></ion-toggle>
+            </ion-item>
+
+            <div class="list-spacer"></div>
+
+            <div style="margin:24px; color:var(--b54);">
+              <p>Receive notifications on predefined time and week days.</p>
+            </div>
+
+            <ion-item lines="full">
+              <ion-label>Predefined notifications</ion-label>
+              <ion-toggle slot="start" name="custom"></ion-toggle>
+            </ion-item>
+
+            <ion-item class="custom" lines="full">
+              <ion-label>Shift start notification time </ion-label>
+              <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:00:00+01:00"></ion-datetime>
+            </ion-item>
+
+            <ion-item lines="full">
+              <ion-label>Shift end notification time</ion-label>
+              <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T17:00:00+01:00"></ion-datetime>
+            </ion-item>
+
+            <ion-item lines="full">
+              <ion-label>Days of the week</ion-label>
+
+              <ion-select multiple="true">
+                <ion-select-option value="Monday">Monday</ion-select-option>
+                <ion-select-option value="Tuesday">Tuesday</ion-select-option>
+                <ion-select-option value="Wednesday">Wednesday</ion-select-option>
+                <ion-select-option value="Thursday">Thursday</ion-select-option>
+                <ion-select-option value="Friday">Friday</ion-select-option>
+                <ion-select-option value="Saturday">Saturday</ion-select-option>
+                <ion-select-option value="Sunday">Sunday</ion-select-option>   
+              </ion-select>
+
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+
+        <!-- <div slot="fixed" style="bottom:0px; width: 100%;">
+          <ion-button onclick="saveLeaveTime()" href="./leave.html" class="btn bl" color="primary">Done</ion-button>
+        </div> -->
+      </ion-content>
+
+    </ion-page>
+  </ion-app>
+  
+  <ion-menu-controller></ion-menu-controller>
+
+</body>
+
+<script type="text/javascript" src='./main.js'></script>
+</html>

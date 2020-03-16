@@ -21,6 +21,27 @@
   </script>
 </head>
 
+<script>
+  // Select all radio items
+  let radios = document.getElementsByTagName('ion-radio');
+
+  // Loop to find the selected one
+  function saveLeaveTime(){
+    for(i=0;i<radios.length;i++){
+      if (radios[i].classList.contains('radio-checked')){
+        localStorage.setItem("leaveTime", radios[i].value);
+      }
+    }
+  };
+
+  // Enable custom items
+
+  function custom(){
+    document.getElementsByClassName('custom')[0].setAttribute("display","none");
+  };
+
+</script>
+
 <body>
 
   <ion-app>
@@ -52,19 +73,24 @@
             </ion-item>
 
             <div class="list-spacer"></div>
-        
-            <ion-item  lines="full">
-              <ion-toggle slot="start" name="blueberry"></ion-toggle>
+
+            <div style="margin:24px; color:var(--b54);">
+              <p>You can set custom time if your leave time is different from the options provided above.</p>
+            </div>
+
+            <ion-item lines="full">
+              <!-- <ion-toggle  style="padding-right: 8px;" slot="start" name="custom"></ion-toggle> -->
+              <ion-radio onclick="custom()" value="Custom"></ion-radio>
               <ion-label>Custom</ion-label>
             </ion-item>
 
-            <ion-item style="opacity:0.2;" lines="full">
-              <ion-label>Start Time</ion-label>
+            <ion-item class="custom" lines="full">
+              <ion-label style="margin-left: 36px;">Start time</ion-label>
               <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:43Z"></ion-datetime>
             </ion-item>
 
-            <ion-item style="opacity:0.2;" lines="full">
-              <ion-label>End Time</ion-label>
+            <ion-item lines="full">
+              <ion-label style="margin-left: 36px;">End time</ion-label>
               <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T07:43Z"></ion-datetime>
             </ion-item>
         
@@ -84,17 +110,4 @@
 </body>
 
 <script type="text/javascript" src='./main.js'></script>
-<script>
-  // Select all radio items
-  let radios = document.getElementsByTagName('ion-radio');
-
-  // Loop to find the selected one
-  function saveLeaveTime(){
-    for(i=0;i<radios.length;i++){
-      if (radios[i].classList.contains('radio-checked')){
-        localStorage.setItem("leaveTime", radios[i].value);
-      }
-    }
-  }
-</script>
 </html>
