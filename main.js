@@ -40,7 +40,7 @@ class MenuLogo extends HTMLElement {
 }
 customElements.define('menu-logo', MenuLogo);
 
-// Meek div
+// Week div
 class WeekDiv extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -75,6 +75,20 @@ class WeekDiv extends HTMLElement {
     }
 }
 customElements.define('week-div', WeekDiv);
+
+//picker extension
+class PickerItem extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <ion-item lines="full">
+            <ion-label>Mark clocking as incorrect</ion-label>
+            <ion-toggle slot="start" name="custom"></ion-toggle>
+        </ion-item>
+        `;
+    }
+}
+customElements.define('picker-item', PickerItem);
+
 
 // Ionic overrides
 $("ion-item").attr("detail", "false").attr("lines", "full").attr("style", "--background: var(--w);");

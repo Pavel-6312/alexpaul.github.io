@@ -35,12 +35,7 @@
 
 <!-- shift props -->
       <ion-content>
-          <div style="
-          background-color: var(--brand); 
-          margin-top:52px; 
-          color:white;
-          padding-bottom: 16px;
-          ">
+          <div class="shift-section">
 
             <div class="slider" style="display: flex;">
                 <div class="shift">
@@ -86,9 +81,9 @@
 <!-- clockings -->
             <ion-list>  
 
-                <ion-item>
+                <ion-item >
                     <ion-label>1 Clock in<br></ion-label>
-                    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T06:00Z"></ion-datetime>
+                    <ion-datetime onclick="setTimeout(modPicker,100);" display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T06:00Z"></ion-datetime>
                 </ion-item> 
 
                  <ion-item>
@@ -120,7 +115,17 @@
             document.getElementById('showmore').innerHTML = 'Hide description'
             document.getElementById('showmore').setAttribute('style','color:var(--yellow);text-decoration:underline;');
         }
-    }
+    };
+
+
+    function modPicker(){
+        // Now create and append to iDiv
+        var innerDiv = document.createElement('picker-item');
+        innerDiv.className = 'block-2';
+
+        // The variable iDiv is still good... Just append to it.
+        document.querySelector('.picker-wrapper').appendChild(innerDiv);
+    };
 </script>
 <script type="text/javascript" src='./main.js'></script>
 </html>
