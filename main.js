@@ -107,12 +107,15 @@ function saveRemark(){
     window.location.href = './leave.html';
 };
 
-function presentAlert() {
+function presentAlert(header,buttons,message) {
   const alert = document.createElement('ion-alert');
-  alert.header = 'Leave request submitted';
-  alert.message = 'Check ‘Requests’ tab to see leave status updates.';
-  alert.buttons = ['OK'];
+  alert.header = header;
+  alert.message = message;
+  alert.buttons = buttons;
 
   document.body.appendChild(alert);
   return alert.present();
 };
+
+
+

@@ -254,6 +254,36 @@
     margin: 0 auto;
   }
 
+  /* clock in button */
+  .clocking-button{
+    display: flex; 
+    height: 68px;
+    font-size: 18px;
+  }
+
+  .clocking-button p {
+    margin:auto 4px auto 24px; 
+  }
+
+  .clocking-button span{
+    margin: auto 4px auto 8px;
+  }
+
+  .timer{
+    background: var(--blue); 
+    min-height: 52px; 
+    border-radius: 3px; 
+    color:white; 
+    margin: auto 8px auto auto;
+    display: flex;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s;
+    opacity:0;
+    width:112px;
+  }
+
   /* item component */
   .item-comp {
     text-decoration: none;
@@ -288,12 +318,12 @@
 
   form p { position: relative; }
 
-/* page transiiton on load */
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  /* page transiiton on load */
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-body {
-  opacity:0;
-  animation:fadeIn ease-in 1;
-  animation-fill-mode:forwards;
-  animation-duration:0.5s;
-}
+  body {
+    opacity:0;
+    animation:fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:0.5s;
+  }

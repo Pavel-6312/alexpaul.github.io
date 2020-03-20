@@ -117,7 +117,7 @@ if (localStorage.getItem("leaveTime") == null){
           </ion-list>
 
           <div slot="fixed" style="bottom:0px; width: 100%">
-              <button onclick="presentAlert()" class="btn bl" color="primary">Submit leave request</button>
+              <button onclick="presentAlert('Leave request submitted',['OK'],'Check ‘Requests’ tab to see leave status updates.')" class="btn bl" color="primary">Submit leave request</button>
           </div>
         </ion-content>
       </ion-tab>
@@ -177,15 +177,14 @@ if (localStorage.getItem("leaveTime") == null){
           <ion-list id="requests">
 
             <a class="item-comp header-margin">
-                  <p class="">
+                  <p>
                     <strong>9 – 11 Mar 2020</strong><br>
                     8:00 – 17:00 (16 h)<br> 
-                    <span style="color:var(--green);">Approved vacation</span>
-                    
+                    <span style="color:var(--green);">Approved vacation</span>    
                   </p>
                   
                   <div style="min-height: 100%; display: flex;">
-                    <div style="height:52px; width:52px; display: flex; margin: auto;">
+                    <div style="height:52px; width:52px; display: flex; margin: auto;" onclick="presentAlert('Cancel leave request?', ['Yes, cancel request', 'No'])">
                       <img style="margin: auto;" src="./mat/Icons/x.svg">
                     </div>
                   </div>
@@ -200,7 +199,7 @@ if (localStorage.getItem("leaveTime") == null){
                 </p>
                 
                 <div style="min-height: 100%; display: flex;">
-                  <div style="height:52px; width:52px; display: flex; margin: auto;">
+                  <div style="height:52px; width:52px; display: flex; margin: auto;" onclick="presentAlert('Cancel leave request?', ['Yes, cancel request', 'No'])">
                     <img style="margin: auto;" src="./mat/Icons/x.svg">
                   </div>
                 </div>
@@ -257,7 +256,7 @@ if (localStorage.getItem("leaveTime") == null){
 
           <ion-tab-button tab="tab-requests">          
             <ion-label>Requests</ion-label>
-            <ion-badge>1</ion-badge>
+            <!-- <ion-badge>1</ion-badge> -->
           </ion-tab-button>
       
       </ion-tab-bar>
