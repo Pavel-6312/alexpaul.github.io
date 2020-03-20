@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Indigo mobile</title> 
+<link rel="shortcut icon" href="https://indigo-testing.shireburn.com//Content/favicon.png?version=1.65.0.1">
+
+<!-- reset -->
+<link rel="stylesheet" type = "text/css" href="./reset.css"/>
+
+<!-- ionic -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- main -->
+<link rel="stylesheet" type = "text/css" href="./main.css" /> 
+</head>
+
+<body>
+
+  <ion-app>
+    <ion-page class="ion-page" id="main-content">
+<!-- header -->
+      <div class="header shadow" style="background-color: var(--brand);color:white;">
+        <a href="./attendance.html" class="btn-ico center" onclick="saveLeaveType()"><img src="./mat/Icons/ar-w.svg"></a>
+        <p style="margin:auto">Monday, 9 Mar 2020</p>
+        <a class="btn-ico center" onclick="presentAlert('Add clocking pair',['OK'],'TBA')"><img src="./mat/Icons/plus-w.svg"></a>
+      </div>
+
+<!-- shift props -->
+      <ion-content>
+          <div style="
+          background-color: var(--brand); 
+          margin-top:52px; 
+          color:white;
+          padding-bottom: 16px;
+          ">
+
+            <div class="slider" style="display: flex;">
+                <div class="shift">
+                    <div></div>
+                    <p>Full day</p>
+                </div>
+
+                <div style="min-width: 16px;"></div>
+            </div>
+
+            <div class="shift-props">
+              <p>
+                Attendance<br>
+                Flexitime break<br>
+                Cost centre<br>
+                Description
+              </p>
+
+              <p style="text-align: right;margin-left: auto;">
+                08:00-17:00<br>
+                12:00-14:00 (1h)<br>
+                Valletta restaurant<br>
+                <a id="showmore" onclick="hideDescription()" style="text-decoration: underline;color: white;">Show more</a>
+              </p>
+            </div>
+
+            <p class="description none">
+                Hi I am having the same issue. However this is only when I use prototype. I can see my image in the project and then when I use prototype it's invisible?<br><br>
+
+                4:04pm<br><br>
+
+                But although it is invisible it is there. I linked an image and when I click in Prototype I can see it highlighting. So it's there. Just invisible? any help would be appreciated. I also made sure nothing was hiding the image or maybe it was falling behind something, but it wasn't.
+              </p>
+
+            <!-- <div class="sliderid">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div> -->
+
+          </div>
+
+<!-- clockings -->
+            <ion-list>  
+
+                <ion-item>
+                    <ion-label>1 Clock in<br></ion-label>
+                    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T06:00Z"></ion-datetime>
+                </ion-item> 
+
+                 <ion-item>
+                    <ion-label>2 Clock out<br></ion-label>
+                    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T16:00Z"></ion-datetime>
+                </ion-item>  
+
+            </ion-list>
+
+      </ion-content>
+
+    </ion-page>
+  </ion-app>
+  
+  <ion-menu-controller></ion-menu-controller>
+
+</body>
+<script>
+    // Show/hide description
+    let descr = document.querySelector('.description');
+
+    function hideDescription(){
+        if(descr.classList.contains('none') == false){
+            descr.classList.add('none');
+            document.getElementById('showmore').innerHTML = 'Show more'
+            document.getElementById('showmore').setAttribute('style','color:white;text-decoration:underline;');
+        } else {
+            descr.classList.remove('none');
+            document.getElementById('showmore').innerHTML = 'Hide description'
+            document.getElementById('showmore').setAttribute('style','color:var(--yellow);text-decoration:underline;');
+        }
+    }
+</script>
+<script type="text/javascript" src='./main.js'></script>
+</html>

@@ -117,5 +117,3 @@ function presentAlert(header,buttons,message) {
   return alert.present();
 };
 
-
-
