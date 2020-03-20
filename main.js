@@ -80,7 +80,7 @@ customElements.define('week-div', WeekDiv);
 class PickerItem extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <ion-item lines="full">
+        <ion-item lines="none">
             <ion-label>Mark clocking as incorrect</ion-label>
             <ion-toggle slot="start" name="custom"></ion-toggle>
         </ion-item>
