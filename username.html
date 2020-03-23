@@ -23,27 +23,36 @@
 
 <body>
 
-  <ion-app>
-    <ion-page style="display: flex; flex-direction: column; height: 100vh;">
-
-      <img style="margin: 24px auto 24px 24px;" src="./mat/indigo-mobile-br.svg">
-      <img style="margin: auto;" src="./mat/cover1.svg">
-      <p style="margin: 0px auto 0px auto; color:var(--b54);">Clock in when working remotely</p>
-
-      <div style="margin: 10px auto 16px auto;" class="sliderid">
-          <div class="dot b active-b"></div>
-          <div class="dot b"></div>
-          <div class="dot b"></div>
+<ion-app>
+    <!-- menu -->
+    <ion-menu content-id="main-content">
+        <div style="display: flex; 
+        flex-direction:column; 
+        min-height: 100vh;">
+          <menu-logo></menu-logo>
+         <menu-items></menu-items>
+        </div>
+      </ion-menu>
+    
+      <ion-page class="ion-page" id="main-content" style="overflow: hidden;">
+  
+      <!-- header -->
+      <div class="header">
+        <p style="margin:auto">Enter your Indigo username</p>
       </div>
 
-      <button onclick="window.location.href = './username.html'" class="btn bl">Continue</button>
+      <form class="header-margin">
+        <input type="text"></input>
+        <a>Don’t know your Indigo username?</a>  
+      </form>
+      <button onclick="window.location.href = './password.html'" class="btn bl" color="primary">Continue</button>
   
     </ion-page>
   </ion-app>
   
   <ion-menu-controller></ion-menu-controller>
 
-</body>
+  </body>
 
   <script type="text/javascript" src='./main.js'></script>
 </html>

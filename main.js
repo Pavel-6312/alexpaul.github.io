@@ -82,7 +82,7 @@ class PickerItem extends HTMLElement {
         this.innerHTML = `
         <ion-item lines="none">
             <ion-label>Mark clocking as incorrect</ion-label>
-            <ion-toggle slot="start" name="custom"></ion-toggle>
+            <ion-toggle id="switch" slot="start" name="custom"></ion-toggle>
         </ion-item>
         `;
     }
@@ -103,7 +103,7 @@ let dateToTeam = document.getElementById("dateToTeam");
 let storedDateFrom = localStorage.setItem("dateFrom", dateFrom.getAttribute("value"));
 let storedDateTo = localStorage.setItem("dateTo", dateFrom.getAttribute("value"));
 
-// Updates dates in team tab
+// Update dates in team tab
 function updateTeamDates (){
     dateFromTeam.setAttribute('value' , dateFrom.value);
     dateToTeam.setAttribute('value' , dateTo.value);

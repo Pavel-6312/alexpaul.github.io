@@ -22,6 +22,12 @@
 <link rel="stylesheet" type = "text/css" href="./main.css" /> 
 </head>
 
+<style>
+  .picker-wrapper {
+    height: calc(260px + 64px) !important;
+  }
+</style>
+
 <body>
 
   <ion-app>
@@ -30,7 +36,7 @@
       <div class="header shadow" style="background-color: var(--brand);color:white;">
         <a href="./attendance.html" class="btn-ico center" onclick="saveLeaveType()"><img src="./mat/Icons/ar-w.svg"></a>
         <p style="margin:auto">Monday, 9 Mar 2020</p>
-        <a class="btn-ico center" onclick="presentAlert('Add clocking pair',['OK'],'TBA')"><img src="./mat/Icons/plus-w.svg"></a>
+        <a class="btn-ico center" onclick="presentAlert2(), setTimeout(setEvent,100);"><img src="./mat/Icons/plus-w.svg"></a>
       </div>
 
 <!-- shift props -->
@@ -68,7 +74,7 @@
                 4:04pm<br><br>
 
                 But although it is invisible it is there. I linked an image and when I click in Prototype I can see it highlighting. So it's there. Just invisible? any help would be appreciated. I also made sure nothing was hiding the image or maybe it was falling behind something, but it wasn't.
-              </p>
+            </p>
 
             <!-- <div class="sliderid">
                 <div class="dot active"></div>
@@ -79,19 +85,36 @@
           </div>
 
 <!-- clockings -->
-            <ion-list>  
+          <ion-list id=clocking-list>  
 
-                <ion-item >
-                    <ion-label>1 Clock in<br></ion-label>
-                    <ion-datetime onclick="setTimeout(modPicker,100);" display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T06:00Z"></ion-datetime>
-                </ion-item> 
+            <ion-item>
+              <ion-label>1 Clock in<br></ion-label>
+              <label class="none" style="color:var(--blue);">Incorrect,&nbsp;</label>
+              <ion-datetime onclick="setTimeout(modPicker,100,1)" display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T06:00Z"></ion-datetime>
+            </ion-item> 
 
-                 <ion-item>
-                    <ion-label>2 Clock out<br></ion-label>
-                    <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T16:00Z"></ion-datetime>
-                </ion-item>  
+            <ion-item>
+                <ion-label>2 Clock out<br></ion-label>
+                <label class="none" style="color:var(--blue);">Incorrect,&nbsp;</label>
+                <ion-datetime onclick="setTimeout(modPicker,100,2)" display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T06:00Z"></ion-datetime>
+            </ion-item> 
 
-            </ion-list>
+            <ion-item class="pair1 none">
+                <ion-label>3 Clock in<br></ion-label>
+                <label class="none" style="color:var(--blue);">Incorrect,&nbsp;</label>
+                <ion-datetime onclick="setTimeout(modPicker,100,3);" display-format="HH:mm" picker-format="HH:mm" value=""></ion-datetime>
+                <label style="color:var(--blue);">?</label>
+            </ion-item>
+
+            <ion-item class="pair2 none">
+                <ion-label >4 Clock out<br></ion-label>
+                <label class="none" style="color:var(--blue);">Incorrect,&nbsp;</label>
+                <ion-datetime onclick="setTimeout(modPicker,100,4);" display-format="HH:mm" picker-format="HH:mm" value=""></ion-datetime>
+                <label style="color:var(--blue);">?</label>
+            </ion-item> 
+
+          </ion-list>
+          </div>
 
       </ion-content>
 
@@ -101,31 +124,95 @@
   <ion-menu-controller></ion-menu-controller>
 
 </body>
+
 <script>
-    // Show/hide description
-    let descr = document.querySelector('.description');
+// marking records
+  
+// Add switch to the date picker
+  function modPicker(a){
 
-    function hideDescription(){
-        if(descr.classList.contains('none') == false){
-            descr.classList.add('none');
-            document.getElementById('showmore').innerHTML = 'Show more'
-            document.getElementById('showmore').setAttribute('style','color:white;text-decoration:underline;');
-        } else {
-            descr.classList.remove('none');
-            document.getElementById('showmore').innerHTML = 'Hide description'
-            document.getElementById('showmore').setAttribute('style','color:var(--yellow);text-decoration:underline;');
-        }
+    //Append switch list item
+    let switchItem = document.createElement('picker-item');
+    document.querySelector('.picker-wrapper').appendChild(switchItem);
+
+    //Switch list item
+    let sw = document.querySelector('#switch');
+    sw.addEventListener('click',updateStorage);
+
+    //Set local storage
+    if (localStorage.getItem('list ' + a) == null) {
+      localStorage.setItem('list ' + a, false);
+      document.querySelector('#clocking-list ion-item:nth-child(' + a + ') label').classList.add('none');
+    }
+    else if (localStorage.getItem('list ' + a) == 'true') {
+      sw.classList.add('toggle-checked');
+      document.querySelector('#clocking-list ion-item:nth-child(' + a + ') label').classList.remove('none');
+    }
+    else if (localStorage.getItem('list ' + a) == 'false') {
+      sw.classList.remove('toggle-checked');
+      document.querySelector('#clocking-list ion-item:nth-child(' + a + ') label').classList.add('none');
     };
 
-
-    function modPicker(){
-        // Now create and append to iDiv
-        var innerDiv = document.createElement('picker-item');
-        innerDiv.className = 'block-2';
-
-        // The variable iDiv is still good... Just append to it.
-        document.querySelector('.picker-wrapper').appendChild(innerDiv);
+    //Update sotrage based on switch
+    function updateStorage(){
+      if (localStorage.getItem('list ' + a) == 'true'){
+        localStorage.setItem('list ' + a, false);
+        document.querySelector('#clocking-list ion-item:nth-child(' + a + ') label').classList.add('none');
+      }
+      else {
+        localStorage.setItem('list ' + a, true);
+        document.querySelector('#clocking-list ion-item:nth-child(' + a + ') label').classList.remove('none');
+        
+      }
     };
+  };
+
+
+// Show/hide description
+  function hideDescription(){
+      let descr = document.querySelector('.description');
+      if(descr.classList.contains('none') == false){
+          descr.classList.add('none');
+          document.getElementById('showmore').innerHTML = 'Show more'
+          document.getElementById('showmore').setAttribute('style','color:white;text-decoration:underline;');
+      } else {
+          descr.classList.remove('none');
+          document.getElementById('showmore').innerHTML = 'Hide description'
+          document.getElementById('showmore').setAttribute('style','color:var(--yellow);text-decoration:underline;');
+      }
+  };
+
+
+// Add clocking records
+//Alert
+function presentAlert2() {
+  const alert = document.createElement('ion-alert');
+  alert.header = 'Add clocking pair';
+  alert.subHeader = 'Clockings are added as an in/out pair. Add a clocking pair and adjust the time.';
+  alert.buttons = ['Cancel','Add clockings'];
+  document.body.appendChild(alert);
+  return alert.present();
+};
+
+//Add event listener
+function setEvent(){
+  document.querySelector('.alert-button:nth-child(2)').addEventListener("click", addPair);    
+}
+
+// Add clocking pair
+  function addPair(){
+    let pair1 = document.querySelector('.pair1');
+    let pair2 = document.querySelector('.pair2');
+
+    if (pair1.classList.contains('none') == true){
+      pair1.classList.remove('none');
+      pair2.classList.remove('none');
+    } else {
+      pair1.classList.add('none');
+      pair2.classList.add('none');
+    }
+  };
 </script>
+
 <script type="text/javascript" src='./main.js'></script>
 </html>
