@@ -24,7 +24,12 @@
 
 <style>
   .picker-wrapper {
-    height: calc(260px + 64px) !important;
+    height: calc(260px + 160px) !important;
+    
+  }
+
+  .picker-columns {
+    margin-bottom: 0px;
   }
 </style>
 
@@ -34,9 +39,14 @@
     <ion-page class="ion-page" id="main-content">
 <!-- header -->
       <div class="header shadow" style="background-color: var(--brand);color:white;">
-        <a href="./attendance.html" class="btn-ico center" onclick="saveLeaveType()"><img src="./mat/Icons/ar-w.svg"></a>
-        <p style="margin:auto">Monday, 9 Mar 2020</p>
-        <a class="btn-ico center" onclick="presentAlert2(), setTimeout(setEvent,100);"><img src="./mat/Icons/plus-w.svg"></a>
+        <a href="./attendance.html" class="btn-ico center"><img src="./mat/Icons/ar-w.svg"></a>
+        <p style="margin:auto">Friday, 27 Mar 2020</p>
+        <a class="btn-ico center"
+          href="./manualrecords.html">
+          <!-- onclick="presentAlert2(); setTimeout(setEvent,200);" -->
+         <img src="./mat/Icons/plus-w.svg">
+
+         </a>
       </div>
 
 <!-- shift props -->
@@ -115,7 +125,6 @@
 
           </ion-list>
           </div>
-
       </ion-content>
 
     </ion-page>
@@ -125,15 +134,18 @@
 
 </body>
 
-<script>
-// marking records
-  
+<script>  
 // Add switch to the date picker
   function modPicker(a){
 
     //Append switch list item
     let switchItem = document.createElement('picker-item');
     document.querySelector('.picker-wrapper').appendChild(switchItem);
+
+    //Add title
+    let pickerToolbar = document.querySelector('.picker-toolbar');
+    let pickerTitle = document.createElement('picker-title');
+    document.querySelector('.picker-wrapper').insertBefore(pickerTitle, pickerToolbar);
 
     //Switch list item
     let sw = document.querySelector('#switch');
@@ -207,7 +219,8 @@ function setEvent(){
     if (pair1.classList.contains('none') == true){
       pair1.classList.remove('none');
       pair2.classList.remove('none');
-    } else {
+    } 
+    else {
       pair1.classList.add('none');
       pair2.classList.add('none');
     }

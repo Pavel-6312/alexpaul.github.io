@@ -76,7 +76,7 @@ class WeekDiv extends HTMLElement {
 }
 customElements.define('week-div', WeekDiv);
 
-//picker extension
+// Picker extension
 class PickerItem extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -88,6 +88,20 @@ class PickerItem extends HTMLElement {
     }
 }
 customElements.define('picker-item', PickerItem);
+
+// Picker title
+class PickerTitle extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <div style="width:100vw; display:flex; flex-direction:column;">
+            <h1 style="margin:24px auto 12px auto; font-size:20px;"> Edit clocking time </h1>
+            <p style="margin:0px auto 12px auto; font-size:14px; padding: 0px 24px; text-align:center; color:var(--b54);">You can mark clocking as 
+incorrect to inform your manager. </p>
+        </div>
+        `;
+    }
+}
+customElements.define('picker-title', PickerTitle);
 
 
 // Ionic overrides

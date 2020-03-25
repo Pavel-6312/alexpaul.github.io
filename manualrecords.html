@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Indigo mobile</title>
+  
+  <link rel="stylesheet" type = "text/css" href="./reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+  <link rel="stylesheet" type = "text/css" href="./main.css" />
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+
+
+  <script type="module">
+    import { pickerController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.pickerController = pickerController;
+  </script>
+</head>
+
+<script>
+  // Select all radio items
+  let radios = document.getElementsByTagName('ion-radio');
+
+  // Loop to find the selected one
+  function saveLeaveTime(){
+    for(i=0;i<radios.length;i++){
+      if (radios[i].classList.contains('radio-checked')){
+        localStorage.setItem("leaveTime", radios[i].value);
+      }
+    }
+  };
+
+  // Enable custom items
+
+  function custom(){
+    document.getElementsByClassName('custom')[0].setAttribute("display","none");
+  };
+
+</script>
+
+<body>
+
+  <ion-app>
+    <ion-page class="ion-page" id="main-content">
+<!-- header -->
+      <div class="header w shadow">
+        <a onclick="saveLeaveTime()" href="./dayview.html" class="btn-ico center"><img src="./mat/Icons/arrow_left.svg"></a>
+        <p style="margin:auto">Add clocking records</p>
+        <a class="btn-ico"></a>
+      </div>
+
+      <ion-content>
+        <ion-list>
+          <ion-radio-group>
+            
+            <div style="margin:72px 24px 24px 24px; color:var(--b54);">
+              <p>Clockings are added as an in/out pair. Adjust date and time and press add button to create a clocking pair.</p>
+            </div>
+
+            <ion-item class="custom" lines="full">
+              <ion-label>Clock in date</ion-label>
+              <ion-datetime display-format="DD MMMM YYYY" picker-format="DD MMMM YYYY" value="2020-03-27T07:00Z"></ion-datetime>
+            </ion-item>
+
+            <ion-item class="custom" lines="full">
+              <ion-label>Clock in time</ion-label>
+              <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-03-19T07:00Z"></ion-datetime>
+            </ion-item>
+
+            <div class="list-spacer"></div>
+
+            <ion-item class="custom" lines="full">
+              <ion-label>Clock out date</ion-label>
+              <ion-datetime display-format="DD MMMM YYYY" picker-format="DD MMMM YYYY" value="2020-03-27T07:00Z"></ion-datetime>
+            </ion-item>
+
+            <ion-item lines="full">
+              <ion-label>End time</ion-label>
+              <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T16:00Z"></ion-datetime>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+
+        <div slot="fixed" style="bottom:0px; width: 100%">
+            <button onclick="window.location.href = './dayview.html'" class="btn bl" color="primary">Add clocking records</button>
+        </div>
+      </ion-content>
+
+    </ion-page>
+  </ion-app>
+  
+  <ion-menu-controller></ion-menu-controller>
+
+</body>
+
+<script type="text/javascript" src='./main.js'></script>
+</html>
