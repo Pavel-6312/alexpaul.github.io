@@ -49,8 +49,8 @@
          </a>
       </div>
 
-<!-- shift props -->
       <ion-content>
+<!-- shift props -->
           <div class="shift-section">
 
             <div class="slider" style="display: flex;">
@@ -112,15 +112,15 @@
             <ion-item class="pair1 none">
                 <ion-label>3 Clock in<br></ion-label>
                 <label class="none" style="color:var(--blue);">Incorrect,&nbsp;</label>
-                <ion-datetime onclick="setTimeout(modPicker,100,3);" display-format="HH:mm" picker-format="HH:mm" value=""></ion-datetime>
-                <label style="color:var(--blue);">?</label>
+                <ion-datetime id='dayIn' onclick="setTimeout(modPicker,100,3);" display-format="HH:mm" picker-format="HH:mm" value=""></ion-datetime>
+                
             </ion-item>
 
             <ion-item class="pair2 none">
                 <ion-label >4 Clock out<br></ion-label>
                 <label class="none" style="color:var(--blue);">Incorrect,&nbsp;</label>
-                <ion-datetime onclick="setTimeout(modPicker,100,4);" display-format="HH:mm" picker-format="HH:mm" value=""></ion-datetime>
-                <label style="color:var(--blue);">?</label>
+                <ion-datetime id='dayOut' onclick="setTimeout(modPicker,100,4);" display-format="HH:mm" picker-format="HH:mm" value=""></ion-datetime>
+                
             </ion-item> 
 
           </ion-list>
@@ -212,6 +212,15 @@ function setEvent(){
 }
 
 // Add clocking pair
+  let pair1Value = document.querySelector('#dayIn');
+  let pair2Value = document.querySelector('#dayOut');
+
+if(localStorage.getItem('addItems') == 'true'){
+  addPair();
+  pair1Value.setAttribute('value',localStorage.getItem('timeIn'));
+  pair2Value.setAttribute('value',localStorage.getItem('timeOut'));
+}
+
   function addPair(){
     let pair1 = document.querySelector('.pair1');
     let pair2 = document.querySelector('.pair2');

@@ -68,7 +68,7 @@
 
             <ion-item class="custom" lines="full">
               <ion-label>Clock in time</ion-label>
-              <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-03-19T07:00Z"></ion-datetime>
+              <ion-datetime id='timeIn' display-format="HH:mm" picker-format="HH:mm" value="1990-03-19T07:00Z"></ion-datetime>
             </ion-item>
 
             <div class="list-spacer"></div>
@@ -79,15 +79,15 @@
             </ion-item>
 
             <ion-item lines="full">
-              <ion-label>End time</ion-label>
-              <ion-datetime display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T16:00Z"></ion-datetime>
+              <ion-label>Clock out time</ion-label>
+              <ion-datetime id='timeOut' display-format="HH:mm" picker-format="HH:mm" value="1990-02-19T16:00Z"></ion-datetime>
             </ion-item>
         
           </ion-radio-group>
         </ion-list>
 
         <div slot="fixed" style="bottom:0px; width: 100%">
-            <button onclick="window.location.href = './dayview.html'" class="btn bl" color="primary">Add clocking records</button>
+            <button onclick="addRecords()" class="btn bl" color="primary">Add clocking records</button>
         </div>
       </ion-content>
 
@@ -99,4 +99,15 @@
 </body>
 
 <script type="text/javascript" src='./main.js'></script>
+
+<script>
+  function addRecords (){
+    let timeIn = document.querySelector('#timeIn');
+    let timeOut = document.querySelector('#timeOut');
+    localStorage.setItem('addItems', 'true');
+    localStorage.setItem('timeIn', timeIn.value);
+    localStorage.setItem('timeOut', timeOut.value);
+    window.location.href='./dayview.html';
+  } 
+</script>
 </html>
