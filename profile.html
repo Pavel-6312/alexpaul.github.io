@@ -1,82 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Indigo mobile</title> 
+<link rel="shortcut icon" href="https://indigo-testing.shireburn.com//Content/favicon.png?version=1.65.0.1">
 
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Indigo mobile</title> 
+<!-- reset -->
+<link rel="stylesheet" type = "text/css" href="./reset.css"/>
 
-  <!-- reset -->
-  <link rel="stylesheet" type = "text/css" href="./reset.css"/>
+<!-- ionic -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
 
-  <!-- ionic -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- main -->
+<link rel="stylesheet" type = "text/css" href="./main.css" /> 
+</head>
 
-  <!-- main -->
-  <link rel="stylesheet" type = "text/css" href="./main.css" /> 
-  </head>
-  <body>
+<body>
 
-  <ion-app>
+<ion-app>
+  
+  <!-- menu -->
+  <ion-menu content-id="main-content">
+    <div style="display: flex; 
+    flex-direction:column; 
+    min-height: 100vh;">
+      <menu-logo></menu-logo>
+      <menu-items></menu-items>
+    </div>
+  </ion-menu>
+
+  <ion-page class="ion-page" id="main-content" style="overflow: hidden;">
+
+  <!-- header -->
+    <div class="header w" style="position: static;">
+      <ion-menu-toggle>
+        <div class="btn-ico center"><img src="./mat/Icons/menu.svg"></div>
+      </ion-menu-toggle>
+      <img style="margin: auto 12px auto 0;" src="./mat/indigo-br.svg">
+    </div> 
     
-    <!-- menu -->
-    <ion-menu content-id="main-content">
-      <div style="display: flex; 
-      flex-direction:column; 
-      min-height: 100vh;">
-        <menu-logo></menu-logo>
-       <menu-items></menu-items>
-      </div>
-    </ion-menu>
-  
-    <ion-page class="ion-page" id="main-content" style="overflow: hidden;">
+    <img src="./mat/profile.svg" style="margin-top: auto; height:45vw;">
 
-    <!-- header -->
-      <div class="header w" style="position: static;">
-        <ion-menu-toggle>
-          <div class="btn-ico center"><img src="./mat/Icons/menu.svg"></div>
-        </ion-menu-toggle>
-        <img style="margin: auto 12px auto 0;" src="./mat/indigo-br.svg">
-      </div> 
+    <p style="font-size:18px; text-align: center; margin:16px auto auto auto; line-height: 27px;">
+      Jane Parker<br>
+      <span style="color: var(--b54);">Shireburn Group</span>
+    </p>
+
+    <div class="list-margin">  
+        <a class="item-comp" href="./notifications.html">
+          <ion-label>Notification settings</ion-label>
+        </a>
+
+        <a class="item-comp" href="./index.html">
+            <ion-label>Log in with another account</ion-label>
+        </a>
+
+        <a class="item-comp" href="https://www.shireburn.com/dataprotection/mobile/">
+          <ion-label>Terms and conditions <span>↗</span></ion-label>
+        </a>
+
+        <a class="item-comp" href="./index.html">
+          <ion-label>Log out</ion-label>
+        </a>
       
-      <img src="./mat/profile.svg" style="margin-top: auto; height:45vw;">
+    </div>
 
-      <p style="font-size:18px; text-align: center; margin:16px auto auto auto; line-height: 27px;">
-        Jane Parker<br>
-        <span style="color: var(--b54);">Shireburn Group</span>
-      </p>
+  </ion-page>
+</ion-app>
 
-      <div class="list-margin">  
-          <a class="item-comp" href="./notifications.html">
-            <ion-label>Notification settings</ion-label>
-          </a>
+<ion-menu-controller></ion-menu-controller>
 
-          <a class="item-comp" href="./index.html">
-              <ion-label>Log in with another account</ion-label>
-          </a>
+</body>
 
-          <a class="item-comp" href="https://www.shireburn.com/dataprotection/mobile/">
-            <ion-label>Terms and conditions <span>↗</span></ion-label>
-          </a>
-
-          <a class="item-comp" href="./index.html">
-            <ion-label>Log out</ion-label>
-          </a>
-        
-      </div>
-
-    </ion-page>
-  </ion-app>
-  
-  <ion-menu-controller></ion-menu-controller>
-
-  </body>
-
-  <script type="text/javascript" src='./main.js'></script>
+<script type="text/javascript" src='./main.js'></script>
 </html>
